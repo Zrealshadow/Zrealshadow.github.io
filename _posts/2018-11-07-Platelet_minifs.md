@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      "MINI FileSystem"
-subtitle:   "a small demo based on QT in C++"
+title:      MINI FileSystem
+subtitle:   a small demo based on QT in C++
 date:       2018-11-07
-author:     "Mr.Z"
+author:     Mr.Z
 catalog:    true
 tags:
 	- DEMO
