@@ -3,8 +3,7 @@ layout: post
 title: "微型文件系统"
 subtitle: "Based on Qt,Using C++"
 author: "Zreal"
-header-img: "img/post-by-web.jpg"
-header-bg-css: "linear-gradient(to right, #24b94a, #38ef7d);"
+catalog: true
 tags:
   - C++
   - Qt
@@ -436,7 +435,7 @@ block数组模块中是顺序储存的内容块，有三类block，一类是数�
 
 #### 核心模块接口：
 
-```C++
+```c++
 //接口：
 //注意以下int==int32, longlong==int64
 //
