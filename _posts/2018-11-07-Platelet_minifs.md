@@ -1,12 +1,14 @@
 ---
-layout:     post
-title:      MINI FileSystem
-subtitle:   a small demo based on QT in C++
-date:       2018-11-07
-author:     Mr.Z
-catalog:    true
+layout: post
+title: "微型文件系统"
+subtitle: "Based on Qt,Using C++"
+author: "Zreal"
+header-img: "img/post-by-web.jpg"
+header-bg-css: "linear-gradient(to right, #24b94a, #38ef7d);"
 tags:
-	- DEMO
+  - C++
+  - Qt
+  - Demo
 ---
 
 # MINI_FS 微型文件系统设计文档
