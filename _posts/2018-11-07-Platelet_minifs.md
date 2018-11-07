@@ -4,6 +4,7 @@ title: "微型文件系统"
 subtitle: "Based on Qt,Using C++"
 author: "Zreal"
 catalog: true
+header-img: "img/post-bg-2015.jpg"
 tags:
   - C++
   - Qt
