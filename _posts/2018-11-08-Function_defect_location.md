@@ -1,12 +1,15 @@
 ---
 layout: post
-title: "函数缺陷定位 Function Defect Location"
+title: "函数缺陷定位 Function_defect_location"
+
 author: "Zreal"
 catalog: true
+header-img: "img/home-bg-art.jpg"
 tags:
-	- python
-	- 机器学习
+  - python
+  - machine learning
 ---
+
 
 # 函数缺陷定位
 
