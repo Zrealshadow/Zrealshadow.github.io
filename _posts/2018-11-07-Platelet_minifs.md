@@ -158,11 +158,11 @@ namespace{}
 
 组在空间中的组织如下图所示（仅示意），标准的一个组为1GB大小，对N个组（总共N组）来说，前面N-1组是满的，而最后一组可以不满。
 
-![1535888335859](https://github.com/Zrealshadow/Zrealshadow.github.io/blob/master/_posts/assets/1535888335859.png)
+![img](/img/assets/1535888335859.png)
 
 但是由于最后一组不满，可能出现利用低的情况。假如每组的辅助信息有0.1GB，而第N组只有0.12GB，这样真正存数据部分只有辅助部分的1/5，显然此时对空间的利用是十分不合理的。
 
-![1535888975124](https://github.com/Zrealshadow/Zrealshadow.github.io/blob/master/_posts/assets/1535888975124.png)
+![img](/img/assets/1535888975124.png)
 
 那么可以这样考虑，使每个组的的实际最大容量可以扩展到1.8到2GB，设置一个UPBOUND的大小值（比如1.8GB），但正常情况下仍然以1GB为准。当要求增加S的大小时，如果第N组当前分配大小SN+S<UPBOUND，则只对第N组扩容S；反之，分为两组，前一组为表准大小1GB，后面一组至少有(UPBOUND-1GB)的空间可以利用，而这大小对于额外信息部分已经很大了。
 
@@ -180,7 +180,7 @@ namespace{}
 - 储存inode的数组
 - 储存block的数组
 
-![3CD82E79-EC5F-4CA3-91BE-F627567D240D](https://github.com/Zrealshadow/Zrealshadow.github.io/blob/master/_posts/assets/3CD82E79-EC5F-4CA3-91BE-F627567D240D.png)
+![img](/img/assets/3CD82E79-EC5F-4CA3-91BE-F627567D240D.png)
 
 关于各部分大小计算，应考虑到4K对齐。根据设计，每个inode大小128B，每个block4KB，格式信息占用最初的4KB。假设一个标准组的块数为cnt，而组的实际可能扩充到可容下两倍左右cnt的block，这也要求inode位图，block位图，inode数组设计时实际上应该为2倍block数组大小作准备。则可以初步列以下方程：
 $$
@@ -188,7 +188,7 @@ $$
 $$
 可计算得到cnt=246694.48087306146。根据对齐等情况可作略微调整，最后取cnt=246696。记4KB为FK（Four KB），则子后设计为：
 
-![1535892104325](https://github.com/Zrealshadow/Zrealshadow.github.io/blob/master/_posts/assets/1535892104325.png)
+![img](/img/assets/1535892104325.png)
 
 可见这些数值有以下特性：
 
@@ -415,9 +415,9 @@ block数组模块中是顺序储存的内容块，有三类block，一类是数�
 
 
 
-![1536135497315](https://github.com/Zrealshadow/Zrealshadow.github.io/blob/master/_posts/assets/1536135497315.png)
+![img](/img/assets/1536135497315.png)
 
-![1536136568987](https://github.com/Zrealshadow/Zrealshadow.github.io/blob/master/_posts/assets/1536136568987.png)
+![img](/img/assets/1536136568987.png)
 
 
 
@@ -880,7 +880,7 @@ namespace func {
 
 
 
-![会话层图解](https://github.com/Zrealshadow/Zrealshadow.github.io/blob/master/_posts/assets/会话层图解.png)
+![img](/img/assets/会话层图解.png)
 
 #### 可改进之处：
 
