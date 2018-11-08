@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "微型文件系统"
+title: "微型文件系统 Mini File System"
 subtitle: "Based on Qt,Using C++"
 author: "Zreal"
 catalog: true

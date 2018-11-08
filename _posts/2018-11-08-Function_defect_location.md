@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "函数缺陷定位 Function_defect_location"
+title: "函数缺陷定位 Function Defect Location"
 
 author: "Zreal"
 catalog: true
