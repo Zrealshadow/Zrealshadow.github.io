@@ -367,23 +367,7 @@ def find_data_of_version(version,function_list):
 
 我们选取了四个模型来进行比较，分别是
 
-
-$$
-Tarantula:\frac{N_{cf}/N_f}{N_{cf}/N_f+N_{cs}/N_s}(1)
-$$
-
-$$
-Kulczynski:\frac{N_{cf}}{N_{uf}+N_{cs}}(2)
-$$
-
-$$
-Ochiai:\frac{N_{cf}}{\sqrt{N_f*(N_{cf}+N_{cs})}}(3)
-$$
-
-$$
-Zoltar:\frac{N_cf}{N_{cf}+N_{uf}+N_{cs}+\frac{N_{uf}*N_{cs}*10000}{N_{cf}}}（4）
-$$
-
+![img](/img/assets/fdl_fomula.png)
 
 ```python
 #Tarantula
@@ -443,18 +427,15 @@ print(data)
 
 首先定义一个概念为相对嫌疑度，为在该版本中，某函数相对其他所有函数的嫌疑度
 
-这样只比较函数嫌疑度之间的相对大小
-$$
-p_{func_i相对}=\frac{p_{func_i}}{\sum_{j=0}^{n}p_{func_i}}
-$$
+这样只比较函数嫌疑度之间的相对大小:
+![img](/img/assets/fdl_fomula_1.png)
 如果该函数为错误函数，应该给予模型一定奖励：
-$$
-score=score_{before}+\frac{n-1}{n}*p_{func_i相对}×score_{init}
-$$
+![img](/img/assets/fdl_fomula_2.png)
+
 如果该函数不为错误函数，则应该给予模型一定惩罚
-$$
-score=score_{before}-\frac{1}{n}*p_{func_i相对}×score_{init}
-$$
+
+![img](/img/assets/fdl_fomula_3.png)
+
 我们以10分为初始分数
 
 最后将所有的版本取求和取平均可得到最终模型得分
