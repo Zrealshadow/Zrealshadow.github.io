@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "设计模式——面向对象 Design Pattern——OO"
+title: "设计模式——面向对象"
 author: "Zreal"
 catalog: true
 header-img: "img/post-bg-unix-linux.jpg"
