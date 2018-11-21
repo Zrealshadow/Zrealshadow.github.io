@@ -105,7 +105,7 @@ tags:
 
 **关联和聚合（Link & Aggregation）**
 
-![img](img/assets/1542698955180.png)
+![img](/img/assets/1542698955180.png)
 
 左边聚合，右边是关联
 
@@ -122,7 +122,7 @@ tags:
 
 - 聚合：and-relationship  继承：or-relationship
 
-  ![img](img/assets/1542699835983.png)
+  ![img](/img/assets/1542699835983.png)
 
 
 
