@@ -1,14 +1,12 @@
 ---
-layout:post
-title:"设计模式——面向对象 Design Pattern——OO"
-author:"Zreal"
+layout: post
+title: "设计模式——面向对象 Design Pattern——OO"
+author: "Zreal"
 catalog: true
-header-img:"img/post-bg-unix-linux.jpg"
+header-img: "img/post-bg-unix-linux.jpg"
 tags:
   - Design Pattern
 ---
-
-
 
 
 
