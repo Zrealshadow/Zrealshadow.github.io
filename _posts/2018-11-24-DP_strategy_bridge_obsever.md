@@ -83,7 +83,7 @@ void Context::setStrategy(Strategy* st){
 }
 ```
 
-```C++
+```c++
 //具体的a策略，是Strategy抽象类的子类，Strategy抽象类定义了algorithm（）接口，a类必须重写覆盖这个函数。
 class ConcreteStrategyA : public Strategy
 {
@@ -97,7 +97,7 @@ public:
 };
 ```
 
-```C++
+```c++
 #include "ConcreteStrategyA.h"
 #include <iostream>
 using namespace std;
@@ -115,7 +115,7 @@ void ConcreteStrategyA::algorithm(){
 
 调用顺序：
 
-```C++
+```c++
 #include <iostream>
 #include "Context.h"
 #include "ConcreteStrategyA.h"
@@ -198,7 +198,7 @@ UML图：
 
 代码层级实现：
 
-```C++
+```c++
 //操作系统
 class OS
 {
@@ -245,7 +245,7 @@ public:
 
 客户使用方式:
 
-```C++
+```c++
 int main()
 {
 	OS *os1 = new WindowOS();
@@ -303,7 +303,7 @@ int main()
 
 代码分析：
 
-```C++
+```c++
 //Subject 抽象类
 #include <vector>
 using namespace std;
@@ -336,7 +336,7 @@ private:
 };
 ```
 
-```C++
+```c++
 //Subject 函数实现
 Subject::Subject(){
 
@@ -374,7 +374,7 @@ void Subject::notify(){
 
 观察者类：
 
-```C++
+```c++
 class Obeserver
 {
 public:
@@ -387,7 +387,7 @@ public:
 
 观察者实例：
 
-```C++
+```c++
 class ConcreteObeserver : public Obeserver
 {
 
@@ -404,7 +404,7 @@ private:
 
 方法实现：
 
-```C++
+```c++
 ConcreteObeserver::ConcreteObeserver(string name){
 	m_objName = name;
 }
@@ -423,7 +423,7 @@ void ConcreteObeserver::update(Subject * sub){
 
 执行顺序：
 
-```C++
+```c++
 int main(int argc, char *argv[])
 {
 	Subject * subject = new ConcreteSubject();
