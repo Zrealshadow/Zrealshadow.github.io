@@ -13,7 +13,7 @@ tags:
 
 
 
-​	In seeking to describe the origins of theater, **one must rely primarily on speculation**, since there is little concrete evidence on which to draw.**The most widely accepted theory**, championed by anthropologists in the late nineteenth and early twentieth centuries, **envisions theater as emerging out of myth and ritual**.**The processperceived by these anthropologists may be summarized briefly.** During the early stages of its development, **a society becomes aware of forces that appear to influence or control its food supply and well-being**. Having little understanding of natural causes, **it attributes both desirable and undesirable occurrences to supernatural or magical forces**, and**it searches for means to win the favor of these forces **. Perceiving an apparent connection between certain actions performed by the group and the result it desires, **the group repeats, refines and formalizes those actions into fixed ceremonies, or rituals**
+​	In seeking to describe the origins of theater, **one must rely primarily on speculation**, since there is little concrete evidence on which to draw.**The most widely accepted theory**, championed by anthropologists in the late nineteenth and early twentieth centuries, **envisions theater as emerging out of myth and ritual**.**The processperceived by these anthropologists may be summarized briefly.** During the early stages of its development, **a society becomes aware of forces that appear to influence or control its food supply and well-being**. Having little understanding of natural causes, **it attributes both desirable and undesirable occurrences to supernatural or magical forces**, and**it searches for means to win the favor of these forces.** Perceiving an apparent connection between certain actions performed by the group and the result it desires,**the group repeats, refines and formalizes those actions into fixed ceremonies, or rituals**
 
 
 
@@ -25,9 +25,9 @@ tags:
 >
 >​	attribute  把sth归因于sth // 把sth归咎于sth
 >
->​	perceive。察觉 把...看作
->
->​	描述戏剧的起源必须主要的依赖于猜测。最广为接受的理论想象戏剧出现于神话和宗教仪式。这个过程被总结的非常简短。社会意识到了一种似乎可以影响或控制食物供给和社会康乐的力量。因为对于自然时间调姐很少，这把一些好的或不太好的发生的事情归咎于超自然或魔法的力量。他们尽力去方法来赢得这种力量的青睐。这群人重复，提炼，规范这些活动到固定的庆祝活动和宗教仪式中。
+>​	perceive 察觉 把...看作
+
+>描述戏剧的起源必须主要的依赖于猜测。最广为接受的理论想象戏剧出现于神话和宗教仪式。这个过程被总结的非常简短。社会意识到了一种似乎可以影响或控制食物供给和社会康乐的力量。因为对于自然时间调姐很少，这把一些好的或不太好的发生的事情归咎于超自然或魔法的力量。他们尽力去方法来赢得这种力量的青睐。这群人重复，提炼，规范这些活动到固定的庆祝活动和宗教仪式中。
 
 
 
