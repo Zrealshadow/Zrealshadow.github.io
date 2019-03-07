@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TOEFL Reading-Verbal-Writing"
+title: "TOEFL Reading-Writing"
 subtitle: " "
 author: "Zreal"
 catalog: true
