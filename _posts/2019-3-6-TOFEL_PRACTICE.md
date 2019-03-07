@@ -156,7 +156,7 @@ Overall, as for me , a youth and a university student , A challenging plan means
 
 Today , more and more students fall in love with sports. ~~Doing exercise is an significant part of their daily life.~~ Not only can it relax and unwind students, but it is also beneficial to students' health. As we know,  students' life is very stressful. **Take my friend Oliver as an example.** every day he has to go to class and lab to do research. After class, there are many assignments and homework to finish, which extremely drives him crazy. Spending long time under the high pressure and unbalanced diet lead to his bad body which makes his parents very concerned. After he starts to play basketball after class,  he feels better. Playing basketball takes him away from the study pressure and improves his strength , speed and flexibility. ~~Additionally, he learns how to better communicate with partners and how to cooporate with others in playing sports.~~
 
-![img](/img/assets/WechatIMG23.tiff)
+![img](/img/assets/WX20190307-220628@2x.png)
 
 > 
 >
