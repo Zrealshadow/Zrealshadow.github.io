@@ -5,8 +5,8 @@ author: "Zreal"
 catalog: true
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - DATA ANALYSE
-  -	ML
+  - DATA_ANALYSE
+  - ML
 ---
 
 
