@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HDFS shell操作及JAVA编程"
+title: "HBase shell操作及JAVA编程"
 author: "Zreal"
 catalog: true
 header-img: "img/roman-post.jpg"
