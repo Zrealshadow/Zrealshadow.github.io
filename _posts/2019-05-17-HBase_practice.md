@@ -19,8 +19,6 @@ tags:
 >
 >Platform: Mac OS
 
-[TOC]
-
 
 
 ## Install HBase on Mac OS
