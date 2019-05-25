@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MapRedcue Programming in JAVA"
+title: "MongoDB Introduction"
 author: "Zreal"
 catalog: true
 header-img: "img/roman-post.jpg"
