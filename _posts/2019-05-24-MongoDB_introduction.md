@@ -1,3 +1,15 @@
+---
+layout: post
+title: "MapRedcue Programming in JAVA"
+author: "Zreal"
+catalog: true
+header-img: "img/roman-post.jpg"
+tags:
+  - Data Base
+---
+
+
+
 # MongoDB Introduction
 
 >Author: Zreal 	曾令泽
@@ -6,7 +18,7 @@
 >
 >Platform: Mac OS
 
-[TOC]
+
 
 ## Install MongoDB
 
@@ -114,7 +126,7 @@ newDB
 # 查看mongodb 版本
 ```
 
-![checktheDatabase](assets/checktheDatabase.png)
+![img](/img/assets/checktheDatabase.png)
 
 **查看所有数据库**
 
@@ -124,7 +136,7 @@ newDB
 
 > 刚刚创建的数据库，如果该数据库里面没有内容，show dbs 不会显示该数据库
 
-![CreateDataBase](assets/CreateDataBase.png)
+![img](/img/assets/CreateDataBase.png)
 
 
 
@@ -149,7 +161,7 @@ option 又如下参数
 > db.newCollection.insertOne(document)
 ```
 
-![createCollection](assets/createCollection.png)
+![img](/img/assets/createCollection.png)
 
 
 
@@ -173,7 +185,7 @@ option 又如下参数
 #全表查询
 ```
 
-![checkthecollection](assets/checkthecollection.png)
+![img](/img/assets/checkthecollection.png)
 
 
 
@@ -197,7 +209,7 @@ option 又如下参数
 > db.collection.update({item:"ame"},{$set:{name:zlz}})
 ```
 
-![update](assets/update.png)
+![img](/img/assets/update.png)
 
 
 
@@ -208,7 +220,7 @@ option 又如下参数
 # 删除当前数据库
 ```
 
-![DropDataBase](assets/DropDataBase.png)
+![img](/img/assets/DropDataBase.png)
 
 
 
@@ -219,7 +231,7 @@ option 又如下参数
 #删除Onecollection 集合
 ```
 
-![dropCollection](assets/dropCollection.png)
+![img](/img/assets/dropCollection.png)
 
 
 
@@ -232,7 +244,7 @@ option 又如下参数
 #删除所有符合条件的文档
 ```
 
-![DeleteCollection](assets/DeleteCollection.png)
+![img](/img/assets/DeleteCollection.png)
 
 
 
@@ -310,7 +322,7 @@ randAge 随机函数随机得到1-n的一个年龄
 > db.people.findOne()
 ```
 
-![image-20190524210602907](assets/image-20190524210602907.png)
+![img](/img/assets/image-20190524210602907.png)
 
 
 
@@ -320,7 +332,7 @@ randAge 随机函数随机得到1-n的一个年龄
 > db.people.findOne({},{_id:0})
 ```
 
-![image-20190524210651305](assets/image-20190524210651305.png)
+![img](/img/assets/image-20190524210651305.png)
 
 
 
@@ -338,7 +350,7 @@ randAge 随机函数随机得到1-n的一个年龄
 > db.people.find({age:{$gr:90}}).sort(age:-1)
 ```
 
-![image-20190524211122260](assets/image-20190524211122260.png)
+![img](/img/assets/image-20190524211122260.png)
 
 
 
@@ -348,7 +360,7 @@ randAge 随机函数随机得到1-n的一个年龄
 > db.people.find({age:{$gt:12,$gt:18}})
 ```
 
-![image-20190524211342827](assets/image-20190524211342827.png)
+![img](/img/assets/image-20190524211342827.png)
 
 
 
@@ -358,7 +370,7 @@ randAge 随机函数随机得到1-n的一个年龄
 > db.people.find({"cat.age":{$gt:10}})
 ```
 
-![image-20190524213702182](assets/image-20190524213702182.png)
+![img](/img/assets/image-20190524213702182.png)
 
 
 
@@ -368,5 +380,5 @@ randAge 随机函数随机得到1-n的一个年龄
 > db.people.find({"cat":{$exists:true}}).count()
 ```
 
-![image-20190524213831930](assets/image-20190524213831930.png)
+![img](/img/assets/image-20190524213831930.png)
 
