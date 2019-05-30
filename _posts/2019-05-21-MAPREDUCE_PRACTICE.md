@@ -412,9 +412,264 @@ public class WordCountOfFile {
 
 ![img](/img/assets/image-20190521103428090.png)
 
+## Requirement Three
+
+>编程实现对输入文件的排序
+>现有多个输入文件，每个文件中的每行内容均为一个整数。要求编写 MapReduce程序读取所有文件中的内容，进行升序排序后，输出到一个新的文件中，输出的数据格式为每行两个整数，第一个数字为第二个整数的排序位次，第二个整数为原待排列的整数，注意相同数据不合并，示例如下：
+>
+>![img](/img/assets/image-20190528125450331.png)
 
 
 
+## Practice Three
+
+**思路**：
+
+Map到Reduce的过程中，Mapreduce会自动按照key值的大小进行排序
+
+Mapper：
+
+<KeyOut,ValueOut>: <30,1> ,<32,1>,<32,1>,<33,1><31,1><32,1>
+
+Reduce:
+
+<KeyIn,ValueIn>:<30,[1]>,<32,[1,1,1]>,<31,[1]>
+
+Reduce 类中维护一个lineNum来记录数据的rank，便利每一个Iterate<>Values,里面的每一个值具有同样的value，因此rank数相同， 每一次Reduce函数处理一个Key值，lineNum记录的rank+1。
+
+<KeyOut,ValueOut>: <1,30>,<2,31>,<3,32>,<3,32>,<3,32>
+
+```java
+/**
+ * @program: LAB3_MapReduceExample
+ * @description:将不同文件下的数字进行排序输出到同一文件下
+ * @author: E1ixir_zzZ
+ * @create: 2019-05-23 11:07
+ **/
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.hdfs.server.namenode.Content;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.OutputFormat;
+import org.apache.hadoop.mapreduce.InputFormat;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.FileSplit;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+import java.io.IOException;
+
+public class SortTheNumberOfFiles {
+    private static Configuration conf = new Configuration();
+    private static String locpath = "hdfs://localhost:9000";
+
+    private static void init() throws Exception {
+        conf.set("fs.defaultFS", "hdfs://localhost:9000");
+        conf.set("dfs.replication", "1");
+    }
+
+    public static class Map extends Mapper<Object,Text,IntWritable,IntWritable>{
+        IntWritable keyInfo=new IntWritable();
+        IntWritable valueInfo=new IntWritable(1);
+
+        public void map(Object key, Text value,Context context)throws IOException,InterruptedException {
+            String line=value.toString();
+            FileSplit split=(FileSplit)context.getInputSplit();
+            String filename=split.getPath().getName();
+//            System.out.println("kkkk:   "+line+" "+filename);
+            if(!(line==null || "".equals(line))){
+//                System.out.println(line+" "+filename);
+                keyInfo.set(Integer.parseInt(line));
+                context.write(keyInfo,valueInfo);
+            }
+        }
+    }
+
+    public static class Reduce extends Reducer<IntWritable,IntWritable,IntWritable,IntWritable>{
+        public IntWritable linenum= new IntWritable(1);
+        public void reduce(IntWritable key,Iterable<IntWritable> values,Context context)throws IOException,InterruptedException{
+            for(IntWritable value:values){
+                IntWritable keyInfo=linenum;
+                context.write(keyInfo,key);
+            }
+            linenum=new IntWritable(linenum.get()+1);
+        }
+    }
+
+
+
+
+    public static void main(String [] args)throws  Exception{
+        init();
+        String InputDir=locpath+"/test/SortInput";
+        String OutputDir=locpath+"/test/SortOutput";
+        FileSystem hdfs=FileSystem.get(conf);
+
+        if(hdfs.exists(new Path(OutputDir))){
+            hdfs.delete(new Path(OutputDir),true);
+        }
+
+
+        Job job=Job.getInstance(conf,"Sort");
+
+        job.setJarByClass(SortTheNumberOfFiles.class);
+        job.setMapperClass(Map.class);
+        job.setMapOutputKeyClass(IntWritable.class);
+        job.setMapOutputValueClass(IntWritable.class);
+        job.setReducerClass(Reduce.class);
+        job.setOutputValueClass(IntWritable.class);
+        job.setOutputKeyClass(IntWritable.class);
+        FileInputFormat.addInputPath(job,new Path(InputDir));
+        FileOutputFormat.setOutputPath(job,new Path(OutputDir));
+        System.exit(job.waitForCompletion(true)?0:1);
+
+    }
+}
+```
+
+
+
+## Requirement Four
+
+>**问题**
+>
+>编写 MapReduce 程序，实现对输入文件中的 child-parent 关系进行挖掘， 输出
+>grandchild-grandparent 的对应关系表。
+>
+>![img](/img/assets/image-20190528131227809.png)
+
+## Practice Four
+
+**思路：**
+
+Grandchild 和 Grandparent中唯一的链接就是parents，我们将每一个人的父辈和子辈进行记录，遍历人群的时候，便利这个人的父辈关系和子辈关系，储存到父辈和子辈的数组里，然后再分别遍历这两个数组，每个父辈都是每个子辈的Grandparents
+
+Map:
+
+1代表，Key的子辈，2代表Key的父辈
+
+<KeyOut,ValueOut>:
+
+<"Steven","2_Jack"> <"Jack","1_Steven"><"Lucy","1_Jone"><"Jone","2_Lucy"><"Jone","2_Jack"><"Jack","1_Jone">
+
+
+
+Reduce:
+
+<KeyIn,ValueIn>:
+
+<"Steven",["2_Jack"]> <"Jack",["1_Jone","1_Steven","2_Alice","2_jesse"]>...
+
+对每个人遍历，通过起关系找到存在的GrandKid-GrandParents关系
+
+<KeyOut,ValueOut>:
+
+<"Steven","Alice">...
+
+```java
+
+import java.io.IOException;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.FileSplit;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+/**
+ * @program: LAB3_MapReduceExample
+ * @description:
+ * @author: E1ixir_zzZ
+ * @create: 2019-05-27 08:19
+ **/
+public class ChildAndParents {
+    private static Configuration conf = new Configuration();
+    private static String locpath = "hdfs://localhost:9000";
+
+    private static void init() throws Exception {
+        conf.set("fs.defaultFS", "hdfs://localhost:9000");
+        conf.set("dfs.replication", "1");
+    }
+
+    public static class Map extends Mapper<Object,Text,Text,Text>{
+        public void map(Object Key, Text value, Context context) throws IOException,InterruptedException{
+            String line=value.toString();
+            String[] words=line.split(" ");
+            System.out.println(words.length);
+            String parents=words[1];
+            String child=words[0];
+            System.out.println("*****************\n"+parents+"___"+child);
+
+
+            String relationType="1";
+            context.write(new Text(parents),new Text(relationType+"_"+child));
+            relationType="2";
+            context.write(new Text(child),new Text(relationType+"_"+parents));
+        }
+    }
+
+    public static class Reduce extends Reducer<Text,Text,Text,Text>{
+        public void reduce(Text key, Iterable<Text> values,Context context)throws IOException,InterruptedException{
+            List<String> GrandParent=new ArrayList<String>(0);
+            List<String> GrandKid=new ArrayList<String>(0);
+            for(Text value: values){
+                String line=value.toString();
+                String type=line.split("_")[0];
+                String name=line.split("_")[1];
+                if("1".equals(type)){
+                    GrandKid.add(name);
+                }
+                else{
+                    GrandParent.add(name);
+                }
+            }
+
+            for(String grandkid:GrandKid){
+                for(String grandparent:GrandParent){
+                    context.write(new Text(grandkid),new Text(grandparent));
+                }
+            }
+        }
+    }
+
+    public static void main(String [] args)throws Exception{
+        init();
+        String InputDir = locpath + "/test/ChildParentInput";
+        String OutputDir = locpath + "/test/ChildParentOutput";
+        FileSystem hdfs=FileSystem.get(conf);
+        if(hdfs.exists(new Path(OutputDir))){
+            hdfs.delete(new Path(OutputDir),true);
+        }
+        Job job=Job.getInstance(conf,"ChildAndParent");
+        job.setJarByClass(ChildAndParents.class);
+        job.setMapperClass(Map.class);
+        job.setReducerClass(Reduce.class);
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(Text.class);
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(Text.class);
+
+        FileOutputFormat.setOutputPath(job,new Path(OutputDir));
+        FileInputFormat.addInputPath(job,new Path(InputDir));
+
+        System.exit(job.waitForCompletion(true)?0:1);
+
+    }
+}
+```
 
 
 
