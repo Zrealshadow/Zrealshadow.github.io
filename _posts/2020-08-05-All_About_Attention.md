@@ -27,7 +27,7 @@ tags:
 
 基于层级注意力机制的文本分类模型，该模型分为两个Word2Sentence， Sentence2Document两个过程， 该过程在结构上具有相似性，都是由Encoder和Attention两个部分构成。
 
-![img](../img/post/avatar-hux-home.jpg)
+![img](/img/post/avatar-hux-home.jpg)
 
 其中Encoder部分使用的是一个BiGRU结构，详细可查看论文。
 
@@ -64,7 +64,7 @@ $$
 
 Transformer结构图
 
-![img](../img/post/transformer.jpg)
+![img](/img/post/transformer.jpg)
 
 ### Self-Attention
 
@@ -76,7 +76,7 @@ Transformer结构图
 
 以Scaled Dot-Product Attention为例
 
-![img](../img/post/self-Attention.png)
+![img](/img/post/self-Attention.png)
 $$
 Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V
 $$
@@ -87,17 +87,17 @@ $$
 
 下面是一个实际的例子，加深对于Q，K，V矩阵来历的理解，[来源](https://link.zhihu.com/?target=https%3A//jalammar.github.io/illustrated-transformer/)
 
-![img](../img/post/Self-Attention-2.png)
+![img](/img/post/Self-Attention-2.png)
 
 
 
 下面按照Scale Dot-Product Attention，对Thinking 的词向量进行计算。
 
-![img](../img/post/self-Attention-3.png)
+![img](/img/post/self-Attention-3.png)
 
 如果理解了HAN中Attention的计算方法，进行类比，这个计算过程不算困难，对于我来说，最难理解的是Query,Key,Values如何得来的。
 
-![img](..\img\post\self-Attention-4.png)
+![img](/img/post/self-Attention-4.png)
 
 X矩阵为对于多个词向量的打包，可以看到Q，K，V都是通过X经过映射函数Wq，Wk，Wv转换而来，而这种Q，K，V都是通过同一矩阵进行映射的及Self-Attention。其中Wq，Wk，Wv是网络中的参数，通过训练得到。
 
@@ -118,7 +118,7 @@ X矩阵为对于多个词向量的打包，可以看到Q，K，V都是通过X经
 
 完整的过程
 
-![img](../img/post/self-Attention-5.png)
+![img](/img/post/self-Attention-5.png)
 
 需要注意的是，在最后经过8个Head Attention之后得到Z0，Z1...Z7之后，拼接成Z后，要与Wo相乘才能得出self-Attention层的输出。在构建过程中，与Wo矩阵相乘容易漏掉。Wo为网络结构的参数，训练得到。
 
@@ -160,9 +160,9 @@ $$
 
 完整结构就是论文中的第一张图，可以看到整个Transfomer是由6个Encoder，6个Decoder堆叠而成的。样例路径
 
-![img](../img/post/self-Attention-6.png)
+![img](/img/post/self-Attention-6.png)
 
-![self-Attention-7](../img/post/self-Attention-7.png)
+![self-Attention-7](/img/post/self-Attention-7.png)
 
 **每个Encoder都结构相同，但是不共享权重，每个全连接层也都是独立的权重。**
 
