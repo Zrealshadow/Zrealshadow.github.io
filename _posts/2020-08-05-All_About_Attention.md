@@ -45,7 +45,9 @@ $$
 $$
 u_{it}=tanh(W_wh_{it}+b_w)
 $$
+
 为了衡量单词的重要性，这里用一个代表Query Pattern的随机初始化的向量与单词向量进行相似度计算，然后通过Softmax进行归一化操作，得到Attention的权重矩阵。（这里很多Blog中写道这个随机初始化向量代表的是上下文含义，但该向量并不是对于某个特定的句子来说的，对于每一个Sentence来说，这个向量是相同的，通过训练网络的过程学习得到，我更倾向于将其理解为一种Pattern，类比CNN中的Kernal所学到的特征，在Attention的 Key-Query-Value模型中，该向量作为Query,我们可以将其当作一个询问的高级表示，比如“该词是否含有比较重要的信息”）
+
 $$
 \alpha_{it}=\frac{exp(u_{it}^Tu_w)}{\sum_texp(u_{it}^Tu_w)}
 $$
@@ -55,6 +57,7 @@ $$
 $$
 
 得到Attention 权重矩阵之后，句子向量可以看作是这些词向量的加权求和。
+
 $$
 s_i=\sum_t \alpha_{it}h_{it}
 $$
@@ -77,6 +80,7 @@ Transformer结构图
 以Scaled Dot-Product Attention为例
 
 ![img](/img/post/self-Attention.png)
+
 $$
 Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V
 $$
@@ -110,6 +114,7 @@ X矩阵为对于多个词向量的打包，可以看到Q，K，V都是通过X经
 论文中这样写到
 
 >Multi-head Attention allows the model to jointly attend to information from different representation subspaces at different positions. With a single attention head, averaging inhibits this.
+>
 >$$
 >MultHead(Q,K,V)=Concat(head_1,...,head_h)W^O \\ Where \  head_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
 >$$
@@ -127,10 +132,13 @@ X矩阵为对于多个词向量的打包，可以看到Q，K，V都是通过X经
 ### Position-wise Feed-Forward Network
 
 在一个Encoder 模块中，除了Self-Attention的sub-layer，还存在一个全连接的前向网络（Fully Connected feed-forward network），它包含两个线性层，中间通过ReLU激活函数
+
 $$
 FFN(x)=max(0,xW_1+b_1)W_2+b_2
 $$
+
 从Encoder的结构图中还可以看到，Self-Attention layer 和 Feed-Forward layer之后都增加了一个Residual layer 和 Normalization layer。 Residual Layer 通过将前一层的信息无差别的传递到下一层，可以有效的仅关注差异部分，解决深度网络训练困难问题。Normalization layer，通过对Residual layer之后的结果的归一化，可以加速模型训练过程，使其更快收敛。
+
 $$
 output=LayerNorm(x+sublayer(x))
 $$
