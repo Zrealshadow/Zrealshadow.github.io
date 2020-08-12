@@ -9,6 +9,7 @@ tags:
   - Deep Learning
   - Paper
 
+
 ---
 
 
@@ -146,7 +147,7 @@ $$
 
 
 $$
-output=LayerNorm(x+sublayer(x))
+output=LayerNorm(x+sublayer(x)）
 $$
 
 
