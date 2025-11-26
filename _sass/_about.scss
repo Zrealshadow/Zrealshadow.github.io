@@ -1,0 +1,219 @@
+/*
+  About Page Styles
+*/
+
+.about-page {
+  section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $extra-light-gray-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: $dark-gray-color;
+      border-bottom: 2px solid $dark-gray-color;
+      padding-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: $dark-gray-color;
+    }
+  }
+}
+
+/*
+  Intro Section
+*/
+
+.intro-section {
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+}
+
+/*
+  Research Section
+*/
+
+.research-section {
+  .research-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      border-left: 3px solid $link-color;
+
+      strong {
+        font-size: 1.1rem;
+        color: $dark-gray-color;
+      }
+
+      p {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+        color: $body-color;
+      }
+    }
+  }
+}
+
+/*
+  Publications Section
+*/
+
+.publications-section {
+  .publication-item {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #fafafa;
+    border-radius: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .publication-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: $dark-gray-color;
+    }
+
+    .publication-authors {
+      font-style: italic;
+      margin-bottom: 0.3rem;
+      color: $body-color;
+    }
+
+    .publication-venue {
+      margin-bottom: 0.5rem;
+      color: $light-gray-color;
+    }
+
+    .publication-links {
+      margin-bottom: 0;
+
+      a {
+        margin-right: 0.5rem;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/*
+  Education Section
+*/
+
+.education-section {
+  .education-item {
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin-bottom: 0.3rem;
+    }
+
+    .institution {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+      color: $body-color;
+    }
+
+    .duration {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      color: $light-gray-color;
+    }
+
+    .description {
+      margin-bottom: 0;
+      color: $body-color;
+    }
+  }
+}
+
+/*
+  Internship Section
+*/
+
+.internship-section {
+  .internship-item {
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin-bottom: 0.3rem;
+    }
+
+    .company {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+      color: $body-color;
+    }
+
+    .duration {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      color: $light-gray-color;
+    }
+
+    .description {
+      margin-bottom: 0;
+      color: $body-color;
+    }
+  }
+}
+
+/*
+  Responsive Design
+*/
+
+@media (max-width: $elements-responsive-width) {
+  .about-page {
+    section {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .intro-section p {
+    font-size: 1rem;
+  }
+
+  .research-section .research-list li {
+    padding-left: 1rem;
+  }
+
+  .publications-section .publication-item {
+    padding: 0.8rem;
+  }
+}
