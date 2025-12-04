@@ -1,5 +1,5 @@
 ---
 layout: archive
-title: Technical Blogs
+title: Blog
 permalink: /blog
 ---
