@@ -1,0 +1,158 @@
+---
+layout: default
+---
+
+<h1>
+  {{ page.title }}
+</h1>
+<p class="gallery-description">
+  A collection of life moments.
+</p>
+
+<div class="gallery-container">
+  {% assign sorted_gallery = site.data.gallery | sort: 'date' | reverse %}
+  {% assign current_year = '' %}
+  {% assign year_items = '' | split: '' %}
+
+  {% for item in sorted_gallery %}
+    {% assign item_year = item.date | slice: 0, 4 %}
+
+    {% if item_year != current_year %}
+      {% if current_year != '' %}
+        <!-- Output previous year's section -->
+        <div class="gallery-year-section">
+          <div class="gallery-year-separator collapsible" onclick="toggleYear('year-{{ current_year }}')">
+            <p> <b>
+              {{ current_year }} </b>
+              <span class="year-count">({{ year_items.size }} moments)</span>
+              <span class="toggle-icon">▼</span>
+            </p>
+          </div>
+          <div class="gallery-grid collapsed" id="year-{{ current_year }}">
+            {% for year_item in year_items %}
+              <div class="gallery-item">
+                <img
+                  src="{{ site.github.url }}/gallery/{{ year_item.image }}"
+                  alt="{{ year_item.caption }}"
+                  class="gallery-image"
+                  style="aspect-ratio: {{ year_item.aspect_ratio }}; object-fit: cover;"
+                  onclick="openModal('{{ site.github.url }}/gallery/{{ year_item.image }}', '{{ year_item.caption }}', '{{ year_item.date }}')"
+                >
+                <div class="gallery-caption">
+                  <p>{{ year_item.caption }}</p>
+                  <span class="gallery-date">{{ year_item.date }}</span>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% assign year_items = '' | split: '' %}
+      {% endif %}
+      {% assign current_year = item_year %}
+    {% endif %}
+
+    {% assign year_items = year_items | push: item %}
+  {% endfor %}
+
+  <!-- Output last year's section -->
+  {% if year_items.size > 0 %}
+    <div class="gallery-year-section">
+      <div class="gallery-year-separator collapsible" onclick="toggleYear('year-{{ current_year }}')">
+        <p> <b>
+          {{ current_year }} </b>
+          <span class="year-count">({{ year_items.size }} moments)</span>
+          <span class="toggle-icon">▼</span>
+        </p>
+      </div>
+      <div class="gallery-grid collapsed" id="year-{{ current_year }}">
+        {% for year_item in year_items %}
+          <div class="gallery-item">
+            <img
+              src="{{ site.github.url }}/gallery/{{ year_item.image }}"
+              alt="{{ year_item.caption }}"
+              class="gallery-image"
+              style="aspect-ratio: {{ year_item.aspect_ratio }}; object-fit: cover;"
+              onclick="openModal('{{ site.github.url }}/gallery/{{ year_item.image }}', '{{ year_item.caption }}', '{{ year_item.date }}')"
+            >
+            <div class="gallery-caption">
+              <p>{{ year_item.caption }}</p>
+              <span class="gallery-date">{{ year_item.date }}</span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<!-- Lightbox Modal -->
+<div id="galleryModal" class="gallery-modal" onclick="closeModal()">
+  <span class="gallery-modal-close" onclick="closeModal()">&times;</span>
+  <img class="gallery-modal-content" id="modalImg">
+  <div class="gallery-modal-caption" id="modalCaption"></div>
+</div>
+
+<script>
+function openModal(imgSrc, caption, date) {
+  event.stopPropagation();
+  const modal = document.getElementById('galleryModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalCaption = document.getElementById('modalCaption');
+
+  modal.classList.add('active');
+  modalImg.src = imgSrc;
+  modalCaption.innerHTML = caption + '<br><small>' + date + '</small>';
+}
+
+function closeModal() {
+  const modal = document.getElementById('galleryModal');
+  modal.classList.remove('active');
+}
+
+// Close modal with ESC key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});
+
+// Toggle year section
+function toggleYear(yearId) {
+  const section = document.getElementById(yearId);
+  const separator = section.previousElementSibling;
+  const icon = separator.querySelector('.toggle-icon');
+
+  if (section.classList.contains('collapsed')) {
+    section.classList.remove('collapsed');
+    icon.textContent = '▲';
+  } else {
+    section.classList.add('collapsed');
+    icon.textContent = '▼';
+  }
+}
+
+// Make "+more" clickable - add click handlers to 5th item in collapsed grids
+document.addEventListener('DOMContentLoaded', function() {
+  const collapsedGrids = document.querySelectorAll('.gallery-grid.collapsed');
+
+  collapsedGrids.forEach(grid => {
+    const items = grid.querySelectorAll('.gallery-item');
+
+    // If there are 6+ items, make the 5th item expandable
+    if (items.length >= 6) {
+      const fifthItem = items[4]; // 0-indexed, so 5th is index 4
+
+      // Add click handler to expand
+      fifthItem.addEventListener('click', function(e) {
+        // Don't trigger if clicking on the image (which opens modal)
+        if (!e.target.classList.contains('gallery-image')) {
+          toggleYear(grid.id);
+        }
+      });
+
+      // Add pointer cursor to show it's clickable
+      fifthItem.style.cursor = 'pointer';
+    }
+  });
+});
+</script>
