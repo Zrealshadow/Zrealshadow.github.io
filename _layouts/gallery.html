@@ -32,11 +32,11 @@ layout: default
             {% for year_item in year_items %}
               <div class="gallery-item">
                 <img
-                  src="{{ site.github.url }}/gallery/{{ year_item.image }}"
+                  src="/gallery/{{ year_item.image }}"
                   alt="{{ year_item.caption }}"
                   class="gallery-image"
                   style="aspect-ratio: {{ year_item.aspect_ratio }}; object-fit: cover;"
-                  onclick="openModal('{{ site.github.url }}/gallery/{{ year_item.image }}', '{{ year_item.caption }}', '{{ year_item.date }}')"
+                  onclick="openModal('/gallery/{{ year_item.image }}', '{{ year_item.caption }}', '{{ year_item.date }}')"
                 >
                 <div class="gallery-caption">
                   <p>{{ year_item.caption }}</p>
@@ -68,11 +68,11 @@ layout: default
         {% for year_item in year_items %}
           <div class="gallery-item">
             <img
-              src="{{ site.github.url }}/gallery/{{ year_item.image }}"
+              src="/gallery/{{ year_item.image }}"
               alt="{{ year_item.caption }}"
               class="gallery-image"
               style="aspect-ratio: {{ year_item.aspect_ratio }}; object-fit: cover;"
-              onclick="openModal('{{ site.github.url }}/gallery/{{ year_item.image }}', '{{ year_item.caption }}', '{{ year_item.date }}')"
+              onclick="openModal('/gallery/{{ year_item.image }}', '{{ year_item.caption }}', '{{ year_item.date }}')"
             >
             <div class="gallery-caption">
               <p>{{ year_item.caption }}</p>
