@@ -3,7 +3,7 @@ layout: post
 title: "Sample Writing Post"
 author: "Lingze Zeng"
 categories: writing
-image: cards.jpg
+image: robot.jpg
 tags: [writing, sample]
 ---
 
