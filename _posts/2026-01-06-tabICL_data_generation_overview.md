@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Tabular Foundation Model: Synthesis Data Generation in TabICL"
+title: "Tabular Foundation Model: Synthesis Data Generation"
 author: "Lingze Zeng"
 image: tfm.png
 tags: [tabular learning, tabular foundation model]
 ---
 > The following notes summarize my understanding of TabICL based on reading its source [code](https://github.com/soda-inria/tabicl) , with additional clarification inspired by Claude’s explanations.
+> In TabPFN, the code of data generation is not released, but the details is described in paper Appendix.C. However, the following implementation in tabICL should be more make sense in my perspective.
 
 ## 1. Overview
 
