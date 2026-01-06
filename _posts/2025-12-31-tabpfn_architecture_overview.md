@@ -3,8 +3,11 @@ layout: post
 title: "Tabular Foundation Model: TabPFN model architecture"
 author: "Lingze Zeng"
 image: tfm.png
-tags: [tabular learning]
+tags: [tabular learning, tabular foundation model]
 ---
+
+> The following notes summarize my understanding of TabPFN based on reading its source [code](https://github.com/PriorLabs/TabPFN), with additional clarification inspired by Claude’s explanations.
+
 ## 1. Architecture Overview
 
 ### Model: PerFeatureTransformer

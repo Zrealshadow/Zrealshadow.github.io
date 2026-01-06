@@ -3,7 +3,7 @@ layout: post
 title: "Rethinking Tabular Modeling: From Feature Embedding to In-Context Learning"
 author: "Lingze Zeng"
 # image: 20251229.jpeg
-tags: [tabular learning]
+tags: [tabular learning, tabular foundation model]
 ---
 
 Tabular data remains the dominant data format in real-world analytics and database systems. Despite strong empirical performance of modern models, **feature embedding** continues to be the fundamental bottleneck in tabular learning. This post summarizes recent insights on tabular foundation models and motivates a unified solution inspired by *image inpainting*.
