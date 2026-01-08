@@ -8,6 +8,7 @@ tags: [tabular learning, tabular foundation model]
 > This note is generated and formalized by claude code as a research assistant agent. We discussed about the numerical feature encoding problem.
 
 ## 1. Data Types in Tabular Learning
+---
 In tabular data, features can be categorized into two types with fundamentally different mathematical properties:
 
 | Feature Type | Mathematical Structure | Example | What Matters |
@@ -18,7 +19,7 @@ In tabular data, features can be categorized into two types with fundamentally d
 **Key difference:**
 
 - **Categorical:** Only equality matters. "red ≠ blue" is all we need to know.
-- **Numerical:** Order and distance matter. "25 < 30 < 35" and "|30-25| < |35-25|" are meaningful.
+- **Numerical:** Order and distance matter. "25 < 30 < 35" and "\|30-25\| < \|35-25\|" are meaningful.
 
 **Consider a toy dataset with two features:**
 
@@ -50,25 +51,25 @@ Age column: $f(25) = 25W + b$, $f(30) = 30W + b$, $f(45) = 45W + b$
 **Requirements:**
 
 - **Categorical (Color):** Need $f(0) \neq f(1)$ ✓ Achieved if $W \neq 0$
-- **Numerical (Age):** Need $f(25) < f(30) < f(45)$ and $|f(30)-f(25)| < |f(45)-f(25)|$
+- **Numerical (Age):** Need $f(25) < f(30) < f(45)$ and $\|f(30)-f(25)\| < \|f(45)-f(25)\|$
 - **Question:** Are these implicit information in different types of data guaranteed?
 
 
 
 ## 2. Why Value Proximity Matters for In-Context Learning
-
+---
 ### From Order to Proximity
-
 Numerical data has a fundamental property: **order induces proximity**.
 
 On the number line, values close to each other are considered similar:
 
 $$\text{Position nearness} \iff \text{Value similarity}$$
 
-For example: $25$ is more similar to $30$ than to $45$ because $|30 - 25| < |45 - 25|$.
+For example: $25$ is more similar to $30$ than to $45$ because $\|30 - 25\| < \|45 - 25\|$.
 
 This proximity concept is **structural**—it comes from the mathematical nature of numerical data, not from any specific dataset.
 
+---
 ### ICL Requires Proximity-Based Attention
 
 **ICL prediction mechanism:** For test sample with feature value $x_{\text{test}}$:
@@ -94,13 +95,14 @@ For numerical data, we need to more fine-grained encoding to preserve this promi
 
 
 ## 3. Current Encoding Limitation
-
+---
 ### The Problem
 
 Standard embedding $f(x) = Wx + b$ maps 1D values to high-dimensional space $\mathbb{R}^d$.
 
 **Question:** Does attention similarity in $\mathbb{R}^d$ respect the original value proximity in 1D?
 
+---
 ### Analysis
 
 Attention similarity is computed as:
@@ -118,15 +120,16 @@ $$
 
 **Key observation:** Similarity depends on:
 
-1. **Product** $x_1 x_2$ (not distance $|x_1 - x_2|$)
+1. **Product** $x_1 x_2$ (not distance $\|x_1 - x_2\|$)
 2. Sum $x_1 + x_2$ weighted by arbitrary $W^\top b$
 3. Constant offset $\|b\|^2$
 
+---
 ### Counterexample
 
 Consider three values: $x_1 = 1, x_2 = 2, x_3 = 100$
 
-**Value proximity:** $|x_2 - x_1| = 1 < 99 = |x_3 - x_1|$ (so $x_2$ is much closer to $x_1$)
+**Value proximity:** $\|x_2 - x_1\| = 1 < 99 = \|x_3 - x_1\|$ (so $x_2$ is much closer to $x_1$)
 
 **Attention similarity:**
 $$
@@ -138,6 +141,7 @@ $$
 
 If $W^\top b$ is large and positive, $\text{sim}(f(x_1), f(x_3))$ can be **much larger** than $\text{sim}(f(x_1), f(x_2))$, despite $x_3$ being far from $x_1$.
 
+---
 ### Conclusion
 
 **No architectural guarantee** that:
@@ -151,6 +155,7 @@ The mapping from **value proximity** (1D structure) to **attention similarity** 
 
 
 ## 4. TabICL's Column-Wise Module
+---
 
 TabICL uses a three-stage architecture. Our proposal targets **Stage 1: Column-wise Embedding**, where each feature column is processed independently using Set Transformer.
 
@@ -172,6 +177,7 @@ $$
 
 
 ## 5.Proposal: Value-Based Position Encoding with RoPE
+---
 
 ### Core Idea
 
@@ -202,7 +208,7 @@ where $x_{\min}, x_{\max}$ are column minimum and maximum.
 
 **Properties:**
 - Maps to $[0, 1]$ range (scale-invariant)
-- Preserves relative distances: $|p(x_2) - p(x_1)| \propto |x_2 - x_1|$
+- Preserves relative distances: $\|p(x_2) - p(x_1)\| \propto \|x_2 - x_1\|$
 - Efficient: $O(n)$ computation
 
 #### RoPE with Value-Based Positions
@@ -222,7 +228,7 @@ $$
 
 Attention weight between samples $i$ and $j$ depends on:
 1. Content similarity: $Q_i \cdot K_j$ (learned)
-2. Value proximity: RoPE bias based on $|p(x_i) - p(x_j)|$ (explicit)
+2. Value proximity: RoPE bias based on $\|p(x_i) - p(x_j)\|$ (explicit)
 
 #### Temperature Scaling (Optional)
 
@@ -233,6 +239,7 @@ where $\tau$ is learnable. Higher $\tau$ → weaker bias; lower $\tau$ → sharp
 
 
 ## 6. Evaluation
+---
 
 ### Claim 1: Explicit Encoding of Partial Order
 
@@ -248,7 +255,7 @@ With $\text{pos}_i = p(\text{value}_i)$:
 
 $$\theta_{ij} \propto p(\text{value}_i) - p(\text{value}_j) \propto \text{value}_i - \text{value}_j$$
 
-**Effect:** Attention weight $A_{ij}$ biased by value difference. Small $|\text{value}_i - \text{value}_j|$ → higher attention.
+**Effect:** Attention weight $A_{ij}$ biased by value difference. Small $\|\text{value}_i - \text{value}_j\|$ → higher attention.
 
 **Conclusion:** Order relationship explicitly encoded in geometry, not learned from data.
 
@@ -272,6 +279,7 @@ Under smoothness assumption $p(y|x_1) \approx p(y|x_2)$ when $|x_1 - x_2|$ small
 
 
 ## 7. Summary
+---
 
 ### The Core Problem
 
@@ -281,11 +289,9 @@ Numerical data has a fundamental property: **order induces proximity**. On the n
 
 For ICL, this proximity should translate to attention similarity (smoothness assumption: nearby values → similar labels).
 
-**Current gap:** Standard embedding $f(x) = Wx + b$ maps to $\mathbb{R}^d$, but attention similarity $f(x_1)^\top f(x_2)$ depends on value **product** $x_1 x_2$, not **proximity** $|x_1 - x_2|$.
+**Current gap:** Standard embedding $f(x) = Wx + b$ maps to $\mathbb{R}^d$, but attention similarity $f(x_1)^\top f(x_2)$ depends on value **product** $x_1 x_2$, not **proximity** $\|x_1 - x_2\|$.
 
 **Consequence:** No architectural guarantee that value proximity → attention similarity.
-
----
 
 **Add value-based inductive bias through RoPE to explicitly encode proximity.**
 
