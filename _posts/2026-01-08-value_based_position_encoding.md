@@ -1,7 +1,13 @@
-# Value-Based Position Encoding for Numerical Features in Tabular Foundation Models
+---
+layout: post
+title: "[IDEA] Value-Based Position Encoding for Numerical Features"
+author: "Lingze Zeng"
+image: tfm.png
+tags: [tabular learning, tabular foundation model]
+---
+> This note is generated and formalized by claude code as a research assistant agent. We discussed about the numerical feature encoding problem.
 
 ## 1. Data Types in Tabular Learning
-
 In tabular data, features can be categorized into two types with fundamentally different mathematical properties:
 
 | Feature Type | Mathematical Structure | Example | What Matters |
