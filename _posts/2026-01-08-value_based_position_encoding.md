@@ -301,7 +301,7 @@ For ICL, this proximity should translate to attention similarity (smoothness ass
 2. Type-aware processing:
    - Numerical: Apply RoPE with $\text{positions} = p(\text{values})$
    - Categorical: Standard Set Transformer
-3. Effect: Attention bias based on $|p(x_i) - p(x_j)|$ (proximity-aware)
+3. Effect: Attention bias based on $\|p(x_i) - p(x_j)\|$ (proximity-aware)
 
 **Key distinction:** Not traditional positional encoding—explicit inductive bias bridging value proximity (1D structure) to attention similarity (model behavior).
 
