@@ -11,7 +11,6 @@ tags: [diffusion models, inpainting]
 **Thinking Problem:**
 <span style="color:red">how to convert this RePainting algorithm to the tabular data, considering the In-Context learning paradigm, where we take the tabular input data as a 2-D images, where pixel is the feature cell.</span>
 
----
 
 ## Notation Reference
 
@@ -25,7 +24,7 @@ tags: [diffusion models, inpainting]
 | $\beta_t$ | Noise variance at step $t$ |
 | $\mu_\theta, \sigma_\theta$ | Model-predicted mean and std |
 | $\epsilon$ | Gaussian noise ~ $\mathcal{N}(0, I)$ |
----
+
 
 
 ## 1. Task Definition
@@ -45,7 +44,7 @@ Fill missing regions in an image with realistic content.
 ### **Example**
 
 ```
-Input Image (x):        Mask (m):           Output (x_0):
+Input Image (x):      Mask (m):          Output (x_0):
 ┌─────────────┐    ┌─────────────┐     ┌─────────────┐
 │   ╔═══╗     │    │   ╔═══╗     │     │   ╔═══╗     │
 │   ║   ║ face│    │   ║ 0 ║ keep│     │   ║ ✓ ║ face│
