@@ -1,5 +1,11 @@
 [
   {
+    "image":"sg_canopy_walk.jpg",
+    "caption": "SG Canopy Walk",
+    "date": "2026-03-08",
+    "aspect_ratio": "16 / 9"
+  },
+  {
     "image": "wyk.jpg",
     "caption": "Yuke, :)",
     "date": "2025-12-18",
