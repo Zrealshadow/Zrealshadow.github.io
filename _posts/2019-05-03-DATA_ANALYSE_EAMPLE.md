@@ -4,7 +4,7 @@ title: "基于移动端用户行为数据的分析及挖掘"
 author: "Zreal"
 catalog: true
 image: post-bg-2015.jpg
-tags: [ML, data analysis]
+tags: [Machine Learning, Data Analytics]
 ---
 
 

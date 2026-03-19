@@ -3,7 +3,7 @@ layout: post
 title: "页式储存中页面置换算法"
 author: "Zreal"
 image: post-bg-unix-linux.jpg
-tags: [C++, OS]
+tags: [Storage System]
 ---
 # 请求页式中的页面置换算法
 

@@ -3,7 +3,7 @@ layout: post
 title: "Decision Tree  ID3Tree"
 author: "Zreal"
 header-img: blog-zreal-4.jpg
-tags: [ML,python]
+tags: [Machine Learning]
 ---
 
 # 决策树  (Decision Tree)＿＿ID3决策树 

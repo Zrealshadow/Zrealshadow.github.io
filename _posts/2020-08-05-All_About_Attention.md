@@ -3,7 +3,7 @@ layout: post
 title: "About Attention"
 author: "Zreal"
 image: Hugo.jpg
-tags: [Deep Learning,Paper]
+tags: [Deep Learning, Paper]
 ---
 
 

@@ -4,7 +4,7 @@ title: "DecisionTree and RandomForest"
 author: "Zreal"
 catalog: true
 image: Hugo.jpg
-tags: [ML, python]
+tags: [Machine Learning]
 ---
 
 # DecisionTree And RandomForest

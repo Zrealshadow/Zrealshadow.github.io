@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[ELDA] Overivew: Enterprice-level Data Analytics Solution"
+title: "Overivew: Enterprice-level Data Analytics Solution"
 author: "Lingze Zeng"
 image: elda.png
-tags: [data analytics, ELDA]
+tags: [Data Analytics, Feature Store]
 ---
 
 ## Preface

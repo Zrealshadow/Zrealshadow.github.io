@@ -4,7 +4,7 @@ title: "ext文件系统详解"
 author: "Zreal"
 catalog: true
 image: post-bg-unix-linux.jpg
-tags: [C++, OS]
+tags: [File System]
 ---
 # linux系统下ext文件系统详解
 

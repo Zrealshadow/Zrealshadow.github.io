@@ -3,7 +3,7 @@ layout: post
 title: "Linear Regression"
 author: "Zreal"
 image: robot.jpg
-tags: [ML, python]
+tags: [Machine Learning]
 ---
 
 

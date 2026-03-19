@@ -4,7 +4,7 @@ title: "Sample Writing Post"
 author: "Lingze Zeng"
 categories: writing
 image: cards.jpg
-tags: [writing, sample]
+tags: [writing]
 ---
 
 This is a sample writing post. Posts in the `_posts` directory with the `writing` category will automatically appear on your Writing page.

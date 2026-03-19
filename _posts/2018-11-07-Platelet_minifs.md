@@ -3,7 +3,7 @@ layout: post
 title: "Mini File System"
 author: "Zreal"
 image: post-bg-2015.jpg
-tags: [C++, QT]
+tags: [OS]
 ---
 
 # MINI_FS 微型文件系统设计文档

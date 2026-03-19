@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[IDEA] Value-Based Position Encoding for Numerical Features"
+title: "Value-Based Position Encoding for Numerical Features"
 author: "Lingze Zeng"
 image: tfm.png
-tags: [tabular learning, tabular foundation model]
+tags: [Tabular Foundation Model, IDEA]
 ---
 > This note is generated and formalized by claude code as a research assistant agent. We discussed about the numerical feature encoding problem.
 

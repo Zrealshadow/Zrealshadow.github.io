@@ -4,7 +4,7 @@ title: "可变分区储存管理"
 author: "Zreal"
 catalog: true
 image: post-bg-unix-linux.jpg
-tags: [C++, OS]
+tags: [Storage System]
 ---
 # 可变分区储存管理
 

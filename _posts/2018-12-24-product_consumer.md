@@ -4,7 +4,7 @@ title: "windows下多线程实践"
 author: "Zreal"
 catalog: true
 header-img: post-bg-unix-linux.jpg
-tags: [C++, OS]
+tags: [C++]
 ---
 # 生产者消费者多线程实现
 

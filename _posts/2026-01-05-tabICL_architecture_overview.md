@@ -3,7 +3,7 @@ layout: post
 title: "Tabular Foundation Model: TabICL model architecture"
 author: "Lingze Zeng"
 image: tfm.png
-tags: [tabular learning, tabular foundation model]
+tags: [Tabular Foundation Model]
 ---
 > The following notes summarize my understanding of TabICL based on reading its source [code](https://github.com/soda-inria/tabicl) , with additional clarification inspired by Claude’s explanations.
 
