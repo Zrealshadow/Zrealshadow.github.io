@@ -29,3 +29,36 @@
 .related-posts a {
   text-decoration: none;
 }
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.post-tag {
+  height: 1.5rem;
+  display: inline-block;
+  padding: 0 0.3rem 0 0.3rem  ;
+  background-color: #e8f4f8;
+  color: #2c5f7c;
+  border-radius: 0.2rem;
+  font-size: 0.7rem;
+  font-family: $sans-serif-font-family;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #d0e8f0;
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: $elements-responsive-width) {
+  .post-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
