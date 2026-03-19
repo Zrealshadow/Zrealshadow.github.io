@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+
+{% assign tags_list = "" | split: "" %}
+{% for post in site.posts %}
+  {% for tag in post.tags %}
+    {% unless tags_list contains tag %}
+      {% assign tags_list = tags_list | push: tag %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+{% assign sorted_tags = tags_list | sort_natural %}
+
+<div class="tags-overview">
+  {% for tag in sorted_tags %}
+    <a href="#{{ tag | slugify }}" class="tag-link">{{ tag }}</a>
+  {% endfor %}
+</div>
+
+<div class="tags-content">
+  {% for tag in sorted_tags %}
+    <section class="tag-section" id="{{ tag | slugify }}">
+      <h2>{{ tag }}</h2>
+      <ul class="posts-container">
+        {% for post in site.posts %}
+          {% assign post_has_tag = false %}
+          {% for post_tag in post.tags %}
+            {% if post_tag == tag %}
+              {% assign post_has_tag = true %}
+            {% endif %}
+          {% endfor %}
+          {% if post_has_tag %}
+            <li itemscope>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+              <p class="post-date">
+                <span>
+                  <i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%B %-d, %Y" }} -
+                  <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}
+                </span>
+              </p>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</div>
