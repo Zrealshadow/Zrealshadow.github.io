@@ -1,8 +1,7 @@
 ---
 layout: post
-title: "Sample Writing Post"
+title: "Helper Docs for this website"
 author: "Lingze Zeng"
-categories: writing
 image: cards.jpg
 tags: [writing]
 ---
