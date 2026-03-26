@@ -22,7 +22,11 @@ layout: default
       {% if post.tags %}
         <div class="post-tags">
           {% for tag in post.tags %}
-            <a href="/tags#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+            {% if site.data.tag_colors[tag] %}
+              <a href="/tags#{{ tag | slugify }}" class="post-tag" style="background-color: {{ site.data.tag_colors[tag].background_color }}; color: {{ site.data.tag_colors[tag].text_color }};">{{ tag }}</a>
+            {% else %}
+              <a href="/tags#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+            {% endif %}
           {% endfor %}
         </div>
       {% endif %}

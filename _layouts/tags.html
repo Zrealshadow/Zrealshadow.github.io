@@ -16,7 +16,11 @@ layout: default
 
 <div class="tags-overview">
   {% for tag in sorted_tags %}
-    <a href="#{{ tag | slugify }}" class="tag-link">{{ tag }}</a>
+    {% if site.data.tag_colors[tag] %}
+      <a href="#{{ tag | slugify }}" class="tag-link" style="background-color: {{ site.data.tag_colors[tag].background_color }}; color: {{ site.data.tag_colors[tag].text_color }};">{{ tag }}</a>
+    {% else %}
+      <a href="#{{ tag | slugify }}" class="tag-link">{{ tag }}</a>
+    {% endif %}
   {% endfor %}
 </div>
 

@@ -1,0 +1,17 @@
+# Tag color configuration
+# For each tag, you can specify background_color and text_color
+# Tags not listed here will use the default colors
+
+Paper:
+  background_color: "#fff3cd"
+  text_color: "#856404"
+
+writing:
+  background_color: "#d4edda"
+  text_color: "#155724"
+
+# Add more tag color configurations below
+# Example:
+# "Your Tag Name":
+#   background_color: "#hexcolor"
+#   text_color: "#hexcolor"
