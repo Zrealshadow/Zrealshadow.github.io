@@ -1,0 +1,94 @@
+---
+layout: default
+---
+
+<!-- <div style="display: flex; align-items: center;">
+  <h2 style="margin: 0 12px 0 0; white-space: nowrap;">{{ page.title }}</h2>
+  <div style="flex: 1; border-top: 1px solid #ccc;"></div>
+</div> -->
+
+{% assign diary_entries = site.diary | sort: 'date' | reverse %}
+
+<div class="doodle-timeline">
+  {% for entry in diary_entries %}
+    <div class="doodle-timeline-item" data-index="{{ forloop.index0 }}" style="display: none;">
+      <div class="doodle-timeline-date">
+        {{ entry.date | date: "%Y-%m-%d" }}
+      </div>
+      <div class="doodle-timeline-content">
+        <div class="doodle-timeline-text">
+          {{ entry.content | strip_html }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<p class="doodle-slogan">Make it work (AI), Make it fast (AI), Make it beautiful (Human).</p>
+
+{% if diary_entries.size > 1 %}
+  <div class="doodle-nav-controls">
+    <button class="doodle-nav-btn doodle-nav-left" id="doodleNavLeft" onclick="navigateDoodle(-1)">
+      <span>‹</span>
+    </button>
+    <div class="doodle-pagination" id="doodlePagination"></div>
+    <button class="doodle-nav-btn doodle-nav-right" id="doodleNavRight" onclick="navigateDoodle(1)">
+      <span>›</span>
+    </button>
+  </div>
+{% endif %}
+
+<script>
+let currentDoodleIndex = 0;
+const totalDoodles = {{ diary_entries.size }};
+
+function updateDoodleDisplay() {
+  const items = document.querySelectorAll('.doodle-timeline-item');
+
+  items.forEach((item, index) => {
+    if (index === currentDoodleIndex) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  // Update navigation buttons
+  const leftBtn = document.getElementById('doodleNavLeft');
+  const rightBtn = document.getElementById('doodleNavRight');
+
+  if (leftBtn) leftBtn.disabled = currentDoodleIndex === 0;
+  if (rightBtn) rightBtn.disabled = currentDoodleIndex === totalDoodles - 1;
+
+  // Update pagination
+  updateDoodlePagination();
+}
+
+function navigateDoodle(direction) {
+  currentDoodleIndex += direction;
+  if (currentDoodleIndex < 0) currentDoodleIndex = 0;
+  if (currentDoodleIndex >= totalDoodles) currentDoodleIndex = totalDoodles - 1;
+  updateDoodleDisplay();
+}
+
+function updateDoodlePagination() {
+  const pagination = document.getElementById('doodlePagination');
+  if (!pagination) return;
+
+  pagination.innerHTML = '';
+  for (let i = 0; i < totalDoodles; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'doodle-pagination-dot' + (i === currentDoodleIndex ? ' active' : '');
+    dot.onclick = () => {
+      currentDoodleIndex = i;
+      updateDoodleDisplay();
+    };
+    pagination.appendChild(dot);
+  }
+}
+
+// Initialize display
+if (totalDoodles > 0) {
+  updateDoodleDisplay();
+}
+</script>

@@ -77,7 +77,7 @@
     .gallery-item {
       flex: 0 0 auto;
       width: 200px;
-      margin-right: -150px;
+      margin-right: -120px;
       transition: all 0.3s ease;
 
       // Hide items after the 5th one when collapsed
@@ -112,7 +112,7 @@
       &:hover {
         transform: translateY(-10px) scale(1.05);
         z-index: 10;
-        margin-right: -140px;
+        margin-right: -110px;
       }
 
       &:last-child {
@@ -126,7 +126,7 @@
 
     &.collapsed .gallery-item {
       width: 150px;
-      margin-right: -110px;
+      margin-right: -80px;
     }
   }
 
@@ -135,7 +135,7 @@
 
     &.collapsed .gallery-item {
       width: 120px;
-      margin-right: -90px;
+      margin-right: -60px;
     }
   }
 }

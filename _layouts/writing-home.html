@@ -1,10 +1,14 @@
 ---
 layout: default
 ---
-
-<h1>{{ page.title }}</h1>
+<!-- 
+<div style="display: flex; align-items: center;">
+  <h2 style="margin: 0 12px 0 0; white-space: nowrap;">{{ page.title }}</h2>
+  <div style="flex: 1; border-top: 1px solid #ccc;"></div>
+</div> -->
 
 {% assign writing_posts = site.posts | where: "categories", "writing" %}
+
 {% for post in writing_posts %}
   <div class="posts-container">
     <h2>

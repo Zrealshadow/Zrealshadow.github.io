@@ -8,6 +8,7 @@ google-ID: ''
 
 menu:
 - {name: 'Blog', url: 'blog.html'}
+- {name: 'Doodle', url: 'doodle.html'}
 - {name: 'Writing', url: 'writing.html'}
 - {name: 'Gallery', url: 'gallery.html'}
 

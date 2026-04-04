@@ -23,6 +23,12 @@ highlighter:         rouge
 permalink:           /:title/
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
+# Collections
+collections:
+  diary:
+    output: false
+    sort_by: date
+
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           'Lingze'
 description:	       'Personal website for life and research'
