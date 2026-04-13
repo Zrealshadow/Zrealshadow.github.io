@@ -6,12 +6,6 @@
     "aspect_ratio": "16 / 9"
   },
   {
-    "image": "wyk.jpg",
-    "caption": "Yuke, :)",
-    "date": "2025-12-18",
-    "aspect_ratio": "16 / 9"
-  },
-  {
     "image": "vldb.jpg",
     "caption": "VLDB 2025, London",
     "date": "2025-08-30",
@@ -30,21 +24,9 @@
     "aspect_ratio": "16 / 9"
   },
   {
-    "image": "yuke_nice.jpg",
-    "caption": "Yuke, Nice France",
-    "date": "2024-06-11",
-    "aspect_ratio": "16 / 9"
-  },
-  {
     "image": "provence.jpg",
     "caption": "Yuke, Provence",
     "date": "2024-06-10",
-    "aspect_ratio": "16 / 9"
-  },
-  {
-    "image": "paris.jpg",
-    "caption": "Yuke, Paris France",
-    "date": "2024-06-07",
     "aspect_ratio": "16 / 9"
   },
   {
@@ -84,27 +66,9 @@
     "aspect_ratio": "16 / 9"
   },
   {
-    "image": "avignon.jpg",
-    "caption": "Yuke, Avignon France",
-    "date": "2024-06-09",
-    "aspect_ratio": "16 / 9"
-  },
-  {
     "image": "thailand.jpg",
     "caption": "Bangkok, Thailand",
     "date": "2024-11-18",
-    "aspect_ratio": "16 / 9"
-  },
-  {
-    "image": "venezia.jpg",
-    "caption": "Yuke, Venice Italy",
-    "date": "2024-06-06",
-    "aspect_ratio": "16 / 9"
-  },
-  {
-    "image": "rome.jpg",
-    "caption": "Yuke, Rome Italy",
-    "date": "2024-06-04",
     "aspect_ratio": "16 / 9"
   },
   {
