@@ -14,12 +14,14 @@ menu:
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
+- {icon: 'user-circle', link: '/cv/lingze_cv.pdf'} 
 - {icon: 'github',     link: 'https://github.com/Zrealshadow'}
 - {icon: 'twitter',    link: 'https://x.com/L1ngze'}
 - {icon: 'instagram',    link: 'https://www.instagram.com/lllllingze_zeng?igsh=MTFsZTR4cGpycGkxZg%3D%3D&utm_source=qr'}
 - {icon: 'linkedin',   link: 'https://www.linkedin.com/in/lingze-zeng-28960a241/'}
-- {icon: 'envelope',   link: 'zlz.bit.pro@gmail.com'}
+- {icon: 'envelope',   link: 'mailto:zlz.bit.pro@gmail.com'}
 
+  
 # Customize site text
 pagination:
   next_page: 'Newer'
