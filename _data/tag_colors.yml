@@ -10,6 +10,10 @@ writing:
   background_color: "#d4edda"
   text_color: "#155724"
 
+IDEA:
+  background_color: "#ffd6e7"
+  text_color: "#c2185b"
+
 # Add more tag color configurations below
 # Example:
 # "Your Tag Name":

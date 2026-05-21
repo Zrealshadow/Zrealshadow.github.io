@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="460" viewBox="0 0 680 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<defs>
+<style>
+.t { font-size: 14px; font-weight: 400; fill: #2C2C2A; }
+.ts { font-size: 12px; font-weight: 400; fill: #5F5E5A; }
+.th { font-size: 14px; font-weight: 500; fill: #2C2C2A; }
+.box { fill: #F1EFE8; stroke: #B4B2A9; }
+.amber-fill { fill: #FAEEDA; stroke: #BA7517; }
+.amber-text-dark { fill: #633806; }
+.amber-text-med { fill: #854F0B; }
+</style>
+</defs>
+
+<text class="th" x="340" y="28" text-anchor="middle">Anomaly detection: one row per VM</text>
+<text class="ts" x="340" y="46" text-anchor="middle">Feature = STL decomposition of recent CPU history</text>
+
+<rect x="40" y="70" width="80" height="28" class="box" stroke-width="0.5"/>
+<text class="ts" x="80" y="88" text-anchor="middle">vm_id</text>
+<rect x="120" y="70" width="240" height="28" class="box" stroke-width="0.5"/>
+<text class="ts" x="240" y="88" text-anchor="middle">CPU pattern (recent 72h)</text>
+<rect x="360" y="70" width="160" height="28" class="box" stroke-width="0.5"/>
+<text class="ts" x="440" y="88" text-anchor="middle">STL feature</text>
+<rect x="520" y="70" width="120" height="28" class="box" stroke-width="0.5"/>
+<text class="ts" x="580" y="88" text-anchor="middle">scheduler action</text>
+
+<rect x="40" y="98" width="80" height="48" class="box" stroke-width="0.5"/>
+<text class="ts" x="80" y="126" text-anchor="middle">vm_001</text>
+<rect x="120" y="98" width="240" height="48" class="box" stroke-width="0.5"/>
+<polyline points="135,128 155,122 175,130 195,124 215,126 235,123 255,127 275,125 295,128 315,124 335,126 350,125" fill="none" stroke="#185FA5" stroke-width="1.2"/>
+<text class="ts" x="240" y="142" text-anchor="middle">stable, predictable</text>
+<rect x="360" y="98" width="160" height="48" class="box" stroke-width="0.5"/>
+<text class="ts" x="440" y="118" text-anchor="middle">v7 (12 min old)</text>
+<text class="ts" x="440" y="136" text-anchor="middle">still accurate</text>
+<rect x="520" y="98" width="120" height="48" class="box" stroke-width="0.5"/>
+<text class="ts" x="580" y="126" text-anchor="middle">skip</text>
+
+<rect x="40" y="146" width="80" height="48" class="amber-fill" stroke-width="0.5"/>
+<text class="ts amber-text-dark" x="80" y="174" text-anchor="middle">vm_002</text>
+<rect x="120" y="146" width="240" height="48" class="amber-fill" stroke-width="0.5"/>
+<polyline points="135,180 150,178 165,176 180,174 195,170 210,160 225,158 240,150 255,162 270,168 285,164 300,158 315,170 330,156 345,168 355,172" fill="none" stroke="#A32D2D" stroke-width="1.4"/>
+<text class="ts amber-text-dark" x="240" y="190" text-anchor="middle">bursty, shifting pattern</text>
+<rect x="360" y="146" width="160" height="48" class="amber-fill" stroke-width="0.5"/>
+<text class="ts amber-text-dark" x="440" y="166" text-anchor="middle">v3 (40 min old)</text>
+<text class="ts amber-text-dark" x="440" y="184" text-anchor="middle">drifted</text>
+<rect x="520" y="146" width="120" height="48" class="amber-fill" stroke-width="0.5"/>
+<text class="th amber-text-dark" x="580" y="174" text-anchor="middle">refresh now</text>
+
+<rect x="40" y="194" width="80" height="48" class="box" stroke-width="0.5"/>
+<text class="ts" x="80" y="222" text-anchor="middle">vm_003</text>
+<rect x="120" y="194" width="240" height="48" class="box" stroke-width="0.5"/>
+<polyline points="135,220 155,228 175,215 195,225 215,212 235,224 255,214 275,226 295,216 315,222 335,218 350,220" fill="none" stroke="#185FA5" stroke-width="1.2"/>
+<text class="ts" x="240" y="238" text-anchor="middle">stable daily cycle</text>
+<rect x="360" y="194" width="160" height="48" class="box" stroke-width="0.5"/>
+<text class="ts" x="440" y="214" text-anchor="middle">v5 (20 min old)</text>
+<text class="ts" x="440" y="232" text-anchor="middle">still accurate</text>
+<rect x="520" y="194" width="120" height="48" class="box" stroke-width="0.5"/>
+<text class="ts" x="580" y="222" text-anchor="middle">skip</text>
+
+<rect x="40" y="242" width="80" height="48" class="amber-fill" stroke-width="0.5"/>
+<text class="ts amber-text-dark" x="80" y="270" text-anchor="middle">vm_004</text>
+<rect x="120" y="242" width="240" height="48" class="amber-fill" stroke-width="0.5"/>
+<polyline points="135,275 155,272 175,270 195,265 215,252 235,260 255,255 270,248 285,260 300,250 315,265 330,255 345,270 355,260" fill="none" stroke="#A32D2D" stroke-width="1.4"/>
+<text class="ts amber-text-dark" x="240" y="286" text-anchor="middle">new deployment, pattern shifting</text>
+<rect x="360" y="242" width="160" height="48" class="amber-fill" stroke-width="0.5"/>
+<text class="ts amber-text-dark" x="440" y="262" text-anchor="middle">v2 (55 min old)</text>
+<text class="ts amber-text-dark" x="440" y="280" text-anchor="middle">drifted</text>
+<rect x="520" y="242" width="120" height="48" class="amber-fill" stroke-width="0.5"/>
+<text class="th amber-text-dark" x="580" y="270" text-anchor="middle">refresh now</text>
+
+<rect x="40" y="290" width="80" height="48" class="box" stroke-width="0.5"/>
+<text class="ts" x="80" y="318" text-anchor="middle">vm_005</text>
+<rect x="120" y="290" width="240" height="48" class="box" stroke-width="0.5"/>
+<polyline points="135,318 155,322 175,316 195,320 215,314 235,318 255,316 275,322 295,318 315,316 335,320 350,318" fill="none" stroke="#185FA5" stroke-width="1.2"/>
+<text class="ts" x="240" y="334" text-anchor="middle">flat, low utilization</text>
+<rect x="360" y="290" width="160" height="48" class="box" stroke-width="0.5"/>
+<text class="ts" x="440" y="310" text-anchor="middle">v9 (8 min old)</text>
+<text class="ts" x="440" y="328" text-anchor="middle">still accurate</text>
+<rect x="520" y="290" width="120" height="48" class="box" stroke-width="0.5"/>
+<text class="ts" x="580" y="318" text-anchor="middle">skip</text>
+
+<text class="ts" x="40" y="360">...</text>
+<text class="ts" x="240" y="360" text-anchor="middle">(275,077 total VMs)</text>
+<text class="ts" x="640" y="360" text-anchor="end">...</text>
+
+<rect x="40" y="390" width="600" height="50" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text class="th amber-text-dark" x="340" y="414" text-anchor="middle">Row-level scheduling: refresh only the drifting VMs (vm_002, vm_004)</text>
+<text class="ts amber-text-med" x="340" y="432" text-anchor="middle">Same query rate across all VMs, but per-VM update value varies by orders of magnitude</text>
+</svg>

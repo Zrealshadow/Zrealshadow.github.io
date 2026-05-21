@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="480" viewBox="0 0 680 480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<defs>
+<style>
+.t { font-size: 14px; font-weight: 400; fill: #2C2C2A; }
+.ts { font-size: 12px; font-weight: 400; fill: #5F5E5A; }
+.th { font-size: 14px; font-weight: 500; fill: #2C2C2A; }
+.box { fill: #F1EFE8; stroke: #B4B2A9; }
+.c-purple-fill { fill: #CECBF6; stroke: #534AB7; }
+.c-purple-card { fill: #EEEDFE; stroke: #534AB7; }
+.c-purple-text-dark { fill: #3C3489; }
+.c-purple-text-med { fill: #534AB7; }
+.c-amber-fill { fill: #FAC775; stroke: #BA7517; }
+.c-amber-card { fill: #FAEEDA; stroke: #BA7517; }
+.c-amber-text-dark { fill: #633806; }
+.c-amber-text-med { fill: #854F0B; }
+</style>
+</defs>
+
+<text class="th" x="170" y="30" text-anchor="middle">Column-level maintenance</text>
+<text class="ts" x="170" y="48" text-anchor="middle">Feast, Hopsworks, Tecton</text>
+
+<text class="th" x="510" y="30" text-anchor="middle">Row-level maintenance</text>
+<text class="ts" x="510" y="48" text-anchor="middle">RALF</text>
+
+<g>
+<rect x="20" y="80" width="50" height="28" class="box" stroke-width="0.5"/>
+<text class="ts" x="45" y="98" text-anchor="middle">user</text>
+<rect x="70" y="80" width="100" height="28" class="c-purple-fill" stroke-width="0.5"/>
+<text class="ts c-purple-text-dark" x="120" y="98" text-anchor="middle">clicks_7d</text>
+<rect x="170" y="80" width="100" height="28" class="c-purple-fill" stroke-width="0.5"/>
+<text class="ts c-purple-text-dark" x="220" y="98" text-anchor="middle">avg_order_30d</text>
+<rect x="270" y="80" width="50" height="28" class="box" stroke-width="0.5"/>
+<text class="ts" x="295" y="98" text-anchor="middle">...</text>
+
+<rect x="20" y="108" width="50" height="26" class="box" stroke-width="0.5"/>
+<text class="ts" x="45" y="125" text-anchor="middle">u_1</text>
+<rect x="70" y="108" width="100" height="26" class="c-purple-fill" stroke-width="0.5"/>
+<rect x="170" y="108" width="100" height="26" class="c-purple-fill" stroke-width="0.5"/>
+<rect x="270" y="108" width="50" height="26" class="box" stroke-width="0.5"/>
+
+<rect x="20" y="134" width="50" height="26" class="box" stroke-width="0.5"/>
+<text class="ts" x="45" y="151" text-anchor="middle">u_2</text>
+<rect x="70" y="134" width="100" height="26" class="c-purple-fill" stroke-width="0.5"/>
+<rect x="170" y="134" width="100" height="26" class="c-purple-fill" stroke-width="0.5"/>
+<rect x="270" y="134" width="50" height="26" class="box" stroke-width="0.5"/>
+
+<rect x="20" y="160" width="50" height="26" class="box" stroke-width="0.5"/>
+<text class="ts" x="45" y="177" text-anchor="middle">u_3</text>
+<rect x="70" y="160" width="100" height="26" class="c-purple-fill" stroke-width="0.5"/>
+<rect x="170" y="160" width="100" height="26" class="c-purple-fill" stroke-width="0.5"/>
+<rect x="270" y="160" width="50" height="26" class="box" stroke-width="0.5"/>
+
+<rect x="20" y="186" width="50" height="26" class="box" stroke-width="0.5"/>
+<text class="ts" x="45" y="203" text-anchor="middle">u_4</text>
+<rect x="70" y="186" width="100" height="26" class="c-purple-fill" stroke-width="0.5"/>
+<rect x="170" y="186" width="100" height="26" class="c-purple-fill" stroke-width="0.5"/>
+<rect x="270" y="186" width="50" height="26" class="box" stroke-width="0.5"/>
+
+<rect x="20" y="212" width="50" height="26" class="box" stroke-width="0.5"/>
+<text class="ts" x="45" y="229" text-anchor="middle">u_5</text>
+<rect x="70" y="212" width="100" height="26" class="c-purple-fill" stroke-width="0.5"/>
+<rect x="170" y="212" width="100" height="26" class="c-purple-fill" stroke-width="0.5"/>
+<rect x="270" y="212" width="50" height="26" class="box" stroke-width="0.5"/>
+</g>
+
+<line x1="340" y1="100" x2="340" y2="240" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+<g>
+<rect x="360" y="80" width="50" height="28" class="box" stroke-width="0.5"/>
+<text class="ts" x="385" y="98" text-anchor="middle">user</text>
+<rect x="410" y="80" width="100" height="28" class="box" stroke-width="0.5"/>
+<text class="ts" x="460" y="98" text-anchor="middle">user_embed</text>
+<rect x="510" y="80" width="100" height="28" class="box" stroke-width="0.5"/>
+<text class="ts" x="560" y="98" text-anchor="middle">doc_embed</text>
+<rect x="610" y="80" width="50" height="28" class="box" stroke-width="0.5"/>
+<text class="ts" x="635" y="98" text-anchor="middle">...</text>
+
+<rect x="360" y="108" width="50" height="26" class="box" stroke-width="0.5"/>
+<text class="ts" x="385" y="125" text-anchor="middle">u_1</text>
+<rect x="410" y="108" width="100" height="26" class="box" stroke-width="0.5"/>
+<rect x="510" y="108" width="100" height="26" class="box" stroke-width="0.5"/>
+<rect x="610" y="108" width="50" height="26" class="box" stroke-width="0.5"/>
+
+<rect x="360" y="134" width="50" height="26" class="box" stroke-width="0.5"/>
+<text class="ts" x="385" y="151" text-anchor="middle">u_2</text>
+<rect x="410" y="134" width="100" height="26" class="c-amber-fill" stroke-width="0.5"/>
+<rect x="510" y="134" width="100" height="26" class="box" stroke-width="0.5"/>
+<rect x="610" y="134" width="50" height="26" class="box" stroke-width="0.5"/>
+
+<rect x="360" y="160" width="50" height="26" class="box" stroke-width="0.5"/>
+<text class="ts" x="385" y="177" text-anchor="middle">u_3</text>
+<rect x="410" y="160" width="100" height="26" class="box" stroke-width="0.5"/>
+<rect x="510" y="160" width="100" height="26" class="c-amber-fill" stroke-width="0.5"/>
+<rect x="610" y="160" width="50" height="26" class="box" stroke-width="0.5"/>
+
+<rect x="360" y="186" width="50" height="26" class="box" stroke-width="0.5"/>
+<text class="ts" x="385" y="203" text-anchor="middle">u_4</text>
+<rect x="410" y="186" width="100" height="26" class="box" stroke-width="0.5"/>
+<rect x="510" y="186" width="100" height="26" class="box" stroke-width="0.5"/>
+<rect x="610" y="186" width="50" height="26" class="box" stroke-width="0.5"/>
+
+<rect x="360" y="212" width="50" height="26" class="box" stroke-width="0.5"/>
+<text class="ts" x="385" y="229" text-anchor="middle">u_5</text>
+<rect x="410" y="212" width="100" height="26" class="c-amber-fill" stroke-width="0.5"/>
+<rect x="510" y="212" width="100" height="26" class="box" stroke-width="0.5"/>
+<rect x="610" y="212" width="50" height="26" class="box" stroke-width="0.5"/>
+</g>
+
+<rect class="c-purple-card" x="20" y="280" width="300" height="60" rx="8" stroke-width="0.5"/>
+<text class="th c-purple-text-dark" x="170" y="306" text-anchor="middle">Refresh whole column at once</text>
+<text class="ts c-purple-text-med" x="170" y="326" text-anchor="middle">SQL GROUP BY over event stream</text>
+
+<rect class="c-amber-card" x="360" y="280" width="300" height="60" rx="8" stroke-width="0.5"/>
+<text class="th c-amber-text-dark" x="510" y="306" text-anchor="middle">Refresh prioritized cells only</text>
+<text class="ts c-amber-text-med" x="510" y="326" text-anchor="middle">Per-entity model invocation</text>
+
+<text class="ts" x="170" y="368" text-anchor="middle">Cheap per-entity, batched</text>
+<text class="ts" x="170" y="388" text-anchor="middle">All users refreshed together</text>
+<text class="ts" x="170" y="408" text-anchor="middle">Best for statistical aggregations</text>
+
+<text class="ts" x="510" y="368" text-anchor="middle">Expensive per-entity, independent</text>
+<text class="ts" x="510" y="388" text-anchor="middle">High-regret entities prioritized</text>
+<text class="ts" x="510" y="408" text-anchor="middle">Best for learned representations</text>
+</svg>
