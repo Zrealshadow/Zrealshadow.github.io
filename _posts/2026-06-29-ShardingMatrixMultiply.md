@@ -3,7 +3,7 @@ layout: post
 title: "Sharded Matrix Multiplication"
 author: "Lingze Zeng"
 image: dragon.png
-tags: [Model Scale]
+tags: [Model Scaling]
 ---
 
 Cheetsheet for the four cases of sharded matmul.
