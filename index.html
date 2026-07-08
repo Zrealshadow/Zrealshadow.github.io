@@ -3,6 +3,40 @@ layout: about
 title: 令泽
 ---
 
+<style>
+:root {
+  --author-font-size: 0.93em;
+  --paper-margin-top: 10px;
+  --paper-margin-bottom: 15px;
+  --conf-title-gap: 2px;
+  --title-author-gap: 2px;
+  --paper-line-height: 1.5em;
+}
+.authors {
+  font-size: var(--author-font-size);
+  font-style: italic;
+  margin-top: var(--title-author-gap);
+  display: block;
+}
+.paper-title {
+  margin-top: var(--conf-title-gap);
+}
+.paper {
+  margin-top: var(--paper-margin-top);
+  margin-bottom: var(--paper-margin-bottom);
+  line-height: var(--paper-line-height);
+}
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.title-row .pdf-link {
+  white-space: nowrap;
+  margin-left: 10px;
+}
+</style>
+
 <p>
 I'm Lingze, a Ph.D candidate in the School of Computing, National University of Singapore (NUS). <br>
 Advised by Prof. <a href="https://www.comp.nus.edu.sg/~ooibc/">Ooi Beng Chin</a>, I mainly work on:
@@ -16,76 +50,77 @@ Advised by Prof. <a href="https://www.comp.nus.edu.sg/~ooibc/">Ooi Beng Chin</a>
 
 
 
-<div style="display: flex; align-items: center;">
-  <h2 style="margin: 0 12px 0 0; white-space: nowrap;">Publication</h2>
+<div style="display: flex; align-items: center; margin: 0 0 10px 0;">
+  <h2 style="margin: 0px 12px 0 0; white-space: nowrap;">Publication</h2>
   <div style="flex: 1; border-top: 1px solid #ccc;"></div>
 </div>
 
-<p><b><font color="#5b99fc">[VLDB 2026]  </font></b><br>
-<span style="border-bottom: 1px solid #000;">NeurIDA: Dynamic Modeling for Effective In-Database Analytics</span>
-[<a href="">pdf</a>]
-<br><b>Lingze Zeng</b>, Shaofeng Cai, Naili Xing, Jiaqi Zhu, Gang Chen, Peng Lu, Jian Pei, Beng Chin Ooi.
-</p>
 
-<p><b><font color="#5b99fc">[ICML 2026]  </font></b><br>
-<span style="border-bottom: 1px solid #000;">pTNAS: Progressive Neural Architecture Search for Tabular Data</span>
-[<a href="https://icml.cc/virtual/2026/poster/66496">pdf</a>]
-<br>Naili Xing, Shaofeng Cai, <b>Lingze Zeng</b>, Jiaqi Zhu, Peng Lu, Jian Pei, Beng Chin Ooi.
-</p>
+<div class="paper">
+<div><b><font color="#5b99fc">[VLDB 2026]  </font></b></div>
+<div class="paper-title title-row"><span>NeurIDA: Dynamic Modeling for Effective In-Database Analytics</span> <span class="pdf-link">[<a href="">pdf</a>]</span></div>
+<div class="authors"><b>Lingze Zeng</b>, Shaofeng Cai, Naili Xing, Jiaqi Zhu, Gang Chen, Peng Lu, Jian Pei, Beng Chin Ooi.</div>
+</div>
 
-<p><b><font color="#5b99fc">[SIGMOD 2026]  </font></b><br>
-<span style="border-bottom: 1px solid #000;">NRBench:A Benchmark Suite for Learned Database Components with  Drift Modeling</span>
-[<a href="">pdf</a>]
-<br>Zhanhao Zhao, Haotian Gao, Naili Xing, <b>Lingze Zeng</b>, Meihui Zhang, Gang Chen, Manuel Rigger, <br>Beng Chin Ooi.
-</p>
+<div class="paper">
+<div><b><font color="#5b99fc">[ICML 2026]  </font></b></div>
+<div class="paper-title title-row"><span>pTNAS: Progressive Neural Architecture Search for Tabular Data</span> <span class="pdf-link">[<a href="https://icml.cc/virtual/2026/poster/66496">pdf</a>]</span></div>
+<div class="authors">Naili Xing, Shaofeng Cai, <b>Lingze Zeng</b>, Jiaqi Zhu, Peng Lu, Jian Pei, Beng Chin Ooi.</div>
+</div>
 
-<p><b><font color="#5b99fc">[ArXiv 2025]  </font></b><br>
-<span style="border-bottom: 1px solid #000;">From Schema to Signal: Retrieval-Augmented Modeling for Relational Data Analytics</span>
-[<a href="https://arxiv.org/abs/2605.14464">pdf</a>]
-<br><b>Lingze Zeng</b>, Shaofeng Cai, Changshuo Liu, Zhongle Xie, Yuncheng Wu, Beng Chin Ooi
-</p>
+<div class="paper">
+<div><b><font color="#5b99fc">[SIGMOD 2026]  </font></b></div>
+<div class="paper-title title-row"><span>NRBench:A Benchmark Suite for Learned Database Components with  Drift Modeling</span> <span class="pdf-link">[<a href="">pdf</a>]</span></div>
+<div class="authors">Zhanhao Zhao, Haotian Gao, Naili Xing, <b>Lingze Zeng</b>, Meihui Zhang, Gang Chen, Manuel Rigger, Beng Chin Ooi.</div>
+</div>
 
-<p><b><font color="#5b99fc">[ICML 2025]  </font></b>
-<br>
-<span style="border-bottom: 1px solid #000;">NeuralCohort: Cohort-aware Neural Representation Learning for Healthcare Analytics.</span>
-[<a href="https://openreview.net/pdf?id=bqQVa6VRvm">pdf</a>]
-<br>Changshuo Liu, <b>Lingze Zeng</b>, Kaiping Zheng, Shaofeng Cai, Beng Chin Ooi, James Wei Luen Yip.
-</p>
+<div class="paper">
+<div><b><font color="#5b99fc">[ArXiv 2025]  </font></b></div>
+<div class="paper-title title-row"><span>From Schema to Signal: Retrieval-Augmented Modeling for Relational Data Analytics</span> <span class="pdf-link">[<a href="https://arxiv.org/abs/2605.14464">pdf</a>]</span></div>
+<div class="authors"><b>Lingze Zeng</b>, Shaofeng Cai, Changshuo Liu, Zhongle Xie, Yuncheng Wu, Beng Chin Ooi</div>
+</div>
 
-<p><b><font color="#5b99fc">[VLDB 2025]  </font></b><br>
-<span style="border-bottom: 1px solid #000;">Powering In-database Dynamic Model Slicing for Structured Data Analytics</span>
-[<a href="https://arxiv.org/pdf/2405.00568">pdf</a>]
-<br><b>Lingze Zeng</b>, Naili Xing, Shaofeng Cai, Gang Chen, Beng Chin Ooi, Jian Pei, Yuncheng Wu.
-</p>
+<div class="paper">
+<div><b><font color="#5b99fc">[ICML 2025]  </font></b></div>
+<div class="paper-title title-row"><span>NeuralCohort: Cohort-aware Neural Representation Learning for Healthcare Analytics.</span> <span class="pdf-link">[<a href="https://openreview.net/pdf?id=bqQVa6VRvm">pdf</a>]</span></div>
+<div class="authors">Changshuo Liu, <b>Lingze Zeng</b>, Kaiping Zheng, Shaofeng Cai, Beng Chin Ooi, James Wei Luen Yip.</div>
+</div>
 
-<p><b><font color="#5b99fc">[Science China 2024]  </font></b><br>
-<span style="border-bottom: 1px solid #000;">NeurDB: an AI-powered autonomous data system</span>
-[<a href="https://arxiv.org/pdf/2405.03924">pdf</a>]
-<br>Beng Chin Ooi, Shaofeng Cai, Gang Chen, Kian Lee Tan, Yuncheng Wu, Xiaokui Xiao, Naili Xing,<br> Cong Yue, <b>Lingze Zeng</b>, Meihui Zhang, Zhanhao Zhao.
-</p>
+<div class="paper">
+<div><b><font color="#5b99fc">[VLDB 2025]  </font></b></div>
+<div class="paper-title title-row"><span>Powering In-database Dynamic Model Slicing for Structured Data Analytics</span> <span class="pdf-link">[<a href="https://arxiv.org/pdf/2405.00568">pdf</a>]</span></div>
+<div class="authors"><b>Lingze Zeng</b>, Naili Xing, Shaofeng Cai, Gang Chen, Beng Chin Ooi, Jian Pei, Yuncheng Wu.</div>
+</div>
 
-<p><b><font color="#5b99fc">[ICCV 2023]  </font></b><br>
-<span style="border-bottom: 1px solid #000;">Multi-label classification with long-tailed distribution and partial labels</span>
-[<a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhang_Learning_in_Imperfect_Environment_Multi-Label_Classification_with_Long-Tailed_Distribution_and_ICCV_2023_paper.pdf">pdf</a>]
-<br>Wenqiao Zhang, Changshuo Liu, <b>Lingze Zeng</b>, Beng Chin Ooi, Siliang Tang, Yuncheng Wu.
-</p>
+<div class="paper">
+<div><b><font color="#5b99fc">[Science China 2024]  </font></b></div>
+<div class="paper-title title-row"><span>NeurDB: an AI-powered autonomous data system</span> <span class="pdf-link">[<a href="https://arxiv.org/pdf/2405.03924">pdf</a>]</span></div>
+<div class="authors">B.C.Ooi, S.Cai, G.Chen, K.L.Tan, Y.Wu, X.Xiao, N.Xing, C.Yue, <b>Lingze Zeng</b>, M.Zhang, Z.Zhao.</div>
+</div>
 
-<p><b><font color="#5b99fc">[DASFAA 2022]  </font></b><br>
-<span style="border-bottom: 1px solid #000;">A two-phase approach for recognizing tables with complex structures</span>
-[<a href="https://dl.acm.org/doi/10.1007/978-3-031-00123-9_47">link</a>]
-<br>Huichao Li, <b>Lingze Zeng</b>, Weiyu Zhang, Jianing Zhang, Ju Fan, Meihui Zhang.
-</p>
+<div class="paper">
+<div><b><font color="#5b99fc">[ICCV 2023]  </font></b></div>
+<div class="paper-title title-row"><span>Multi-label classification with long-tailed distribution and partial labels</span> <span class="pdf-link">[<a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhang_Learning_in_Imperfect_Environment_Multi-Label_Classification_with_Long-Tailed_Distribution_and_ICCV_2023_paper.pdf">pdf</a>]</span></div>
+<div class="authors">Wenqiao Zhang, Changshuo Liu, <b>Lingze Zeng</b>, Beng Chin Ooi, Siliang Tang, Yuncheng Wu.</div>
+</div>
 
-<p><b><font color="#5b99fc">[APWeb 2022]  </font></b><br>
-<span style="border-bottom: 1px solid #000;">Synbert: Chinese synonym discovery on privacy-constrain medical terms with pre-trained bert</span>
-[<a href="https://link.springer.com/chapter/10.1007/978-3-031-25158-0_25">link</a>]
-<br><b>Lingze Zeng</b>, Chang Yao, Meihui Zhang, Zhongle Xie.
-</p>
+<div class="paper">
+<div><b><font color="#5b99fc">[DASFAA 2022]  </font></b></div>
+<div class="paper-title title-row"><span>A two-phase approach for recognizing tables with complex structures</span> <span class="pdf-link">[<a href="https://dl.acm.org/doi/10.1007/978-3-031-00123-9_47">link</a>]</span></div>
+<div class="authors">Huichao Li, <b>Lingze Zeng</b>, Weiyu Zhang, Jianing Zhang, Ju Fan, Meihui Zhang.</div>
+</div>
 
-<div style="display: flex; align-items: center;">
+<div class="paper">
+<div><b><font color="#5b99fc">[APWeb 2022]  </font></b></div>
+<div class="paper-title title-row"><span>Synbert: Chinese synonym discovery on privacy-constrain medical terms with pre-trained bert</span> <span class="pdf-link">[<a href="https://link.springer.com/chapter/10.1007/978-3-031-25158-0_25">link</a>]</span></div>
+<div class="authors"><b>Lingze Zeng</b>, Chang Yao, Meihui Zhang, Zhongle Xie.</div>
+</div>
+
+<div style="display: flex; align-items: center; margin: 20px 0 0 0;">
   <h2 style="margin: 0 12px 0 0; white-space: nowrap;">Education</h2>
   <div style="flex: 1; border-top: 1px solid #ccc;"></div>
 </div>
+
 <!-- Educations -->
 <!-- <h2>Education</h2> -->
 
@@ -132,7 +167,7 @@ National University of Singapore (<b>NUS</b>)  <span style="float: right">2022 -
 </li>
 
 <li>
-Topics: <i>Data Engine for Cohort Analysis</i>;  <i> Relational Data Analytics</i>
+Topics: <i>Data Engine for Cohort Analysis</span>;  <i> Relational Data Analytics</span>
 </li>
 <li>
 Cohort OLAP system (COOL) [<a href="https://www.comp.nus.edu.sg/~ooibc/icde20cool.pdf">pdf</a>] [<a href="https://www.comp.nus.edu.sg/~dbsystem/cool/">website</a>]
@@ -147,15 +182,15 @@ Institute of Computing Innovation, Zhejiang University (<b>ZJU</b>)  <span style
     Research Assistant
     </li>
     <li>
-    Topics: <i>Named Entity Recognition</i>; <i>Medical Synonym Discovery</i>
+    Topics: <i>Named Entity Recognition</span>; <i>Medical Synonym Discovery</span>
     </li>
     <li> CHIP 2021 Competition Task 1.
-    <i><b>Rank 1st</b></i> Solution.
+    <i><b>Rank 1st</b></span> Solution.
     <!-- [<a href="http://www.cips-chip.org.cn/2021/eval1">link</a>] -->
     [<a href="https://github.com/DataArk/CHIP2021-Task1-Top1">code</a>]
     </li>
     <!-- <li> CHIP 2021 Competition Task 3.
-    <i><b> Rank 3rd</b></i> Solution
+    <i><b> Rank 3rd</b></span> Solution
     [<a href="http://www.cips-chip.org.cn/2021/eval3">Link</a>]
     [<a href="https://github.com/DataArk/CHIP2021-Task3-Top3">Code</a>]
     </li> -->
