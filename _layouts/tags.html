@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
+<!-- <h1>{{ page.title }}</h1> -->
 
 {% assign tags_list = "" | split: "" %}
 {% for post in site.posts %}
@@ -12,15 +12,18 @@ layout: default
     {% endunless %}
   {% endfor %}
 {% endfor %}
-{% assign sorted_tags = tags_list | sort_natural %}
+{% assign category_tags = "IDEA,Paper,writing" | split: "," %}
+{% assign topic_tags = "" | split: "" %}
+{% for tag in tags_list %}
+  {% unless category_tags contains tag %}
+    {% assign topic_tags = topic_tags | push: tag %}
+  {% endunless %}
+{% endfor %}
+{% assign sorted_tags = topic_tags | sort_natural %}
 
 <div class="tags-overview">
   {% for tag in sorted_tags %}
-    {% if site.data.tag_colors[tag] %}
-      <a href="#{{ tag | slugify }}" class="tag-link" style="background-color: {{ site.data.tag_colors[tag].background_color }}; color: {{ site.data.tag_colors[tag].text_color }};">{{ tag }}</a>
-    {% else %}
-      <a href="#{{ tag | slugify }}" class="tag-link">{{ tag }}</a>
-    {% endif %}
+    <a href="#{{ tag | slugify }}" class="tag-link">{{ tag }}</a>
   {% endfor %}
 </div>
 
@@ -37,14 +40,13 @@ layout: default
             {% endif %}
           {% endfor %}
           {% if post_has_tag %}
-            <li itemscope>
-              <a href="{{ post.url }}">{{ post.title }}</a>
-              <p class="post-date">
-                <span>
-                  <i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%B %-d, %Y" }} -
-                  <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}
-                </span>
-              </p>
+            <li itemscope class="post-item">
+              <div class="post-title-row">
+                <div class="post-title-wrapper">
+                  <a href="{{ post.url }}" class="post-title-link">{{ post.title }}</a>
+                </div>
+                <span class="post-date-inline"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%b. %d, %Y" }}</span>
+              </div>
             </li>
           {% endif %}
         {% endfor %}
@@ -52,3 +54,19 @@ layout: default
     </section>
   {% endfor %}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.post-title-wrapper').forEach(function(wrapper) {
+    var link = wrapper.querySelector('.post-title-link');
+    var overflow = link.scrollWidth - wrapper.clientWidth;
+    if (overflow > 0) {
+      var duration = Math.max(2, overflow / 80);
+      wrapper.style.setProperty('--marquee-offset', '-' + overflow + 'px');
+      wrapper.style.setProperty('--marquee-duration', duration + 's');
+    } else {
+      wrapper.style.setProperty('--marquee-offset', '0px');
+    }
+  });
+});
+</script>
